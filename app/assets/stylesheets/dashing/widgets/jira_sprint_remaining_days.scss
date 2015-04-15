@@ -7,7 +7,7 @@ $updated-at-color: rgba(0, 0, 0, 0.3);
 
 /*
 // light grey theme
-$background-color: #999; 
+$background-color: #999;
 $days-color:       #fff;
 $board-color:      rgba(255, 255, 255, 0.7);
 $sprint-color:     rgba(255, 255, 255, 0.7);
@@ -16,7 +16,7 @@ $updated-at-color: rgba(0, 0, 0, 0.3);
 
 /*
 // black theme
-$background-color: #000; 
+$background-color: #000;
 $days-color:       #fff;
 $board-color:      rgba(255, 255, 255, 0.7);
 $sprint-color:     rgba(255, 255, 255, 0.7);
@@ -25,7 +25,7 @@ $updated-at-color: rgba(255, 255, 255, 0.7);
 
 /*
 // white theme
-$background-color: #fff; 
+$background-color: #fff;
 $days-color:       rgba(0, 0, 0, 0.7);
 $board-color: rgba(0, 0, 0, 0.3);
 $sprint-color: rgba(0, 0, 0, 0.3);
@@ -42,11 +42,11 @@ $updated-at-color: rgba(0, 0, 0, 0.3);
   .sprint-name {
     color: $sprint-color;
   }
-  
+
   .days-remaining {
     color: $days-color;
   }
-  
+
   .updated-at {
     color:$updated-at-color;
   }
