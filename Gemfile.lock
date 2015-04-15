@@ -195,6 +195,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jira-ruby
   jquery-rails
+  json
   octokit
   pg
   pry

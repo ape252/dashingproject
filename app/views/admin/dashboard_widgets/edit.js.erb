@@ -32,8 +32,8 @@ showModal(heading, bodyContent);
 bodyContent = "<%= escape_javascript(render(:partial=>'/admin/dashboard_widgets/jira/jira_noofissues')) %>";
 showModal(heading, bodyContent);
 <% elsif @widget.widget_type == "Jira" && @widget.name == "Sprint-remaning-days" %>
-bodyContent = "<%= escape_javascript(render(:partial=>'/admin/dashboard_widgets/jira/jira_sprintprogress')) %>";
-showModal(heading, bodyContent);
+$('#popup_modal').html("<%= escape_javascript(render(:partial=>'/admin/dashboard_widgets/jira/jira_sprintremaniningdays')) %>");
+$('#popup_modal').modal('show');
 <% elsif @widget.widget_type == "Jira" && @widget.name == "Sprint-progress" %>
 // bodyContent = "<%= escape_javascript(render(:partial=>'/admin/dashboard_widgets/jira/jira_sprintremaniningdays')) %>";
 // showModal(heading, bodyContent);

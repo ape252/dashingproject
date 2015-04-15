@@ -10,6 +10,7 @@ gem 'octokit'
 gem 'httparty'
 gem 'responders'
 gem 'jira-ruby', :require => 'jira'
+gem 'json'
 # Use postgres as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
