@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require background
 //= require github/github_commits_validations
 //= require github/github_closed_pr_validations
 //= require github/github_open_pr_validations
