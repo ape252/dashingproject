@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
 gem 'dashing-rails'
-gem 'puma'
+gem 'puma', '~> 2.10.0'
 gem 'twitter'
 gem 'octokit'
 gem 'httparty'
@@ -21,7 +21,11 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-gem 'therubyracer',  platforms: :ruby
+group :production do
+ gem 'libv8', '~> 3.11.8.3'
+ gem 'therubyracer', :platform => :ruby
+end
+# gem 'therubyracer',  platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -39,7 +43,6 @@ gem 'pry'
 gem 'will_paginate-bootstrap'
 gem 'capistrano',  '~> 3.1'
 gem 'capistrano-rails', '~> 1.1'
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

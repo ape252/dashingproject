@@ -2,11 +2,11 @@
 // bodyContent = "<%#= escape_javascript(render(:partial=>'form')) %>";
 // showModal(heading, bodyContent);
 
-$('#popup_modal').html("<%= escape_javascript(render(:partial=>'form')) %>");
-$('#popup_modal').modal('show');
+$('#myModal').html("<%= escape_javascript(render(:partial=>'form')) %>");
+$('#myModal').modal('show');
 
 $("#git").click(function(){
-  
+
   $("#git").addClass("selected");
   $("#jira").removeClass("selected");
   $("#code").removeClass("selected");

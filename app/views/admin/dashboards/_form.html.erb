@@ -1,9 +1,9 @@
-
-<!-- <div id = "flash"> -->
-<%= form_for([:admin, @dashboard], :html => {:id=>"form_dashboard", :class=>"mb-0 form-horizontal", :role => "form", :method => (@dashboard.new_record? ? :post : :put), :remote=>true}) do |f| %>
-<div class="panel panel-default">
+ <div class="row">
+    <div class="col-sm-offset-2 col-sm-10">
+    <%= form_for([:admin, @dashboard], :html => {:id=>"form_dashboard", :class=>"mb-0 form-horizontal", :role => "form", :method => (@dashboard.new_record? ? :post : :put), :remote=>true}) do |f| %>
+ <div class="panel panel-default">
   <div class="panel-heading">
-    <%= params[:action].titleize %> Dashboard
+    <h3 class="panel-title">New Dashboard</h3>
   </div>
   <div class="panel-body" style="height:auto;">
     <div id="dashboard_form_error">
@@ -15,25 +15,15 @@
         <%= f.text_field :name, :class=>"form-control", :id=>"inputName", :placeholder=>"Name" %>
       </div>
     </div>
-    <!-- <div class="col-sm-9">
-      <%= f.text_field :name, :class=>"" %>
-    </div> -->
   </div>
-    <div class="panel-footer text-right">
-      <%= link_to "Cancel", admin_dashboards_path, :class => "btn btn-default", remote: true %>
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary">
-                      <%= button_to "OK", action: 'create' %>
-                    </button>
-    </div>
-    <div class="panel-footer text-right">
-                    <button type="button" class="btn btn-default">
-                      Cancel
-                    </button>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary">
-                      Create
-                    </button>
-                  </div>
-<!-- </div> -->
-<% end %>
+  <div class="panel-footer text-right">
+    <%= link_to "Cancel", admin_dashboards_path, :class => "btn btn-default", remote: true %>
+    <!-- Button trigger modal -->
+    <%= f.submit "OK", :class => "btn btn-primary" %>
+
+  </div>
+  <!-- </div> -->
+  <% end %>
+  </div>
+  </div>
+  </div>

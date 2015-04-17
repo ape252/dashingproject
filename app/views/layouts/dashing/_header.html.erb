@@ -15,13 +15,13 @@
     <ul class="nav navbar-nav">
       <!-- navbar lists -->
       <li>
-        <%= link_to  admin_dashboards_path(@dashboard),:class=>"border-left border-right" do %>
+        <%= link_to  admin_dashboards_path,:class=>"border-left border-right" do %>
           <i class="fa fa-tachometer header-icons"></i><br />
           manage dashboard
         <% end %>
       </li>
       <li>
-        <%= link_to  admin_users_path(@dashboard), :class =>"border-right" do %>
+        <%= link_to  admin_users_path, :class =>"border-right" do %>
         <i class="fa fa-cogs header-icons"></i> <br />
         manage users
         <% end %>

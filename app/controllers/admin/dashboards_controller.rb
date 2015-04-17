@@ -1,7 +1,8 @@
-class Admin::DashboardsController < ApplicationController
+ class Admin::DashboardsController < ApplicationController
 
   def index
     get_collections
+    if @dashboards.present?
     dashboard_widgets = DashboardWidget.where(dashboard_id: @dashboard.id)
     dashboard_widgets.each do |dw|
       if dw.access_token.present? && dw.organization_name.present? && dw.repo_name.present?
@@ -14,6 +15,7 @@ class Admin::DashboardsController < ApplicationController
         $dashboard_widget_jira = dw
       end
     end
+  end
   end
 
   def new

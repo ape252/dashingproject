@@ -1,4 +1,19 @@
-<%= form_for([:admin, @dashboard_widget], url: admin_dashboard_dashboard_widget_path(@dashboard, @widget), :html => {:id=>"form_dashboard_widget", :class=>"mb-0 form-horizontal", :role => "form", :method =>  :patch, :remote=>true}) do |f| %>
-Github URL:<%= f.text_field :github_url, :value => ":https://status.github.com/api/last-message.json", :readonly => true %><br>
-<%= f.submit "Submit" %><br>
-<% end %>
+<div id="popup_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Configur Widget</h4>
+      </div>
+      <%= form_for([:admin, @dashboard_widget], url: admin_dashboard_dashboard_widget_path(@dashboard, @widget), :html => {:id=>"form_dashboard_widget", :method =>  :patch, :remote=>true}) do |f| %>
+      <div class="modal-body">
+        Github URL:<%= f.text_field :github_url, :value => ":https://status.github.com/api/last-message.json", :readonly => true %><br>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <%= f.submit "Submit", :class=>"btn btn-primary" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

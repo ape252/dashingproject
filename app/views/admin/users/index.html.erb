@@ -1,4 +1,8 @@
-<%= link_to 'New user', new_admin_user_path,:remote => true %>
+<a data-toggle="modal" data-target="#myModal"> <%= link_to 'New user', new_admin_user_path,:remote => true %></a>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+</div>
+<% if @users.present? %>
 <div class="row  col-sm-6 hidden-xs">
 	<!-- Dashboard tiles section -->
 	<% @users.each do |user| %>
@@ -10,5 +14,8 @@
 		</div>
 	</div>
 	<% end %>
-<%= will_paginate @users, renderer: BootstrapPagination::Rails %>
+	<%= will_paginate @users, renderer: BootstrapPagination::Rails %>
 </div>
+<% else %>
+<div class="nodashboard">No Users</div>
+<% end %>

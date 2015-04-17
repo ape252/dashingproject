@@ -18,13 +18,11 @@
 
 # # gets the view for a given view id
 # def get_view_for_viewid(view_id)
-
 #   http = create_http
 #   request = create_request("/rest/greenhopper/1.0/rapidviews/list")
 #   response = http.request(request)
 #   views = JSON.parse(response.body)['views']
 #   views.each do |view|
-
 #     if view['id'] == view_id
 #       return view
 #     end

@@ -1,91 +1,78 @@
 <div id="popup_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <!-- <div class="modal-header"> -->
-      <!-- <div class="text-right add-tiles-footer"> -->
-          <%#= theme_form_button(@dashboard_widget,'Ok'," new_admin_dashboard_dashboard_widget") %>
-         <!--  <button data-dismiss="modal" class="btn btn-default" type="button">Close</button> -->
-       <!--  </div> -->
-      <!-- </div> -->
+      <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Add Widgets</h4>
+      </div>
       <%= form_for([:admin, @dashboard_widget], url: admin_dashboard_dashboard_widgets_path(@dashboard), :html => {:id=>"form_dashboard_widget", :class=>"mb-0 form-horizontal", :role => "form", :method => (@dashboard_widget.new_record? ? :post : :put), :remote=>true}) do |f| %>
       <div class="modal-body">
-          <%= f.submit "Ok" %>
-        <div id="myDIV" class="clearfix">
-          <div class="row" >
-            <div class="col-sm-3 text-center" >
-              <div class="list-group">
-                <div class="order-list selected" id="git">
-                  <a href="#" class="list-group-item  list">GIT</a>
-                  <div class="number-of-widgets">0 item(s) selected</div>
-                </div>
-                <div class="order-list" id="jira">
-                  <a href="#" class="list-group-item  list">JIRA</a>
-                  <div class="number-of-widgets">0 item(s) selected</div>
-                </div>
-                <div class="order-list" id="jenkins">
-                  <a href="#" class="list-group-item list">JENKINS</a>
-                  <div class="number-of-widgets">0 item(s) selected</div>
-                </div>
-                <div class="order-list" id="code">
-                  <a href="#" class="list-group-item  list">CODE CLIMATE</a>
-                  <div class="number-of-widgets">0 item(s) selected</div>
-                </div>
+        <div class="row">
+          <div class="col-sm-3 text-center" >
+            <div class="list-group">
+              <div class="order-list selected" id="git">
+                <a href="#" class="list-group-item  list">GIT</a>
+                <div class="number-of-widgets">0 item(s) selected</div>
               </div>
-            </div>
-            <div class="col-sm-9">
-              <div class="add-tiles-content">
-               <div class="checkbox" id="git-widget">
-                <label>
-                  <% @github_widgets.each do |widget| %>
-                  <div><%= check_box_tag "gitwidget[]", widget.id,@dashboard.widgets.include?(widget) %><%= widget.name %></div>
-                  <% end %>
-                </label>
+              <div class="order-list" id="jira">
+                <a href="#" class="list-group-item  list">JIRA</a>
+                <div class="number-of-widgets">0 item(s) selected</div>
               </div>
-              <div class="checkbox" id="jira-widget">
-                <label>
-                  <input type="checkbox">
-                  <% @jira_widgets.each do |widget| %>
-                  <div><%= check_box_tag "jirawidget[]", widget.id,@dashboard.widgets.include?(widget) %><%= widget.name %></div>
-                  <% end %>
-                </label>
+              <div class="order-list" id="jenkins">
+                <a href="#" class="list-group-item list">JENKINS</a>
+                <div class="number-of-widgets">0 item(s) selected</div>
               </div>
-              <div class="checkbox" id="code-widget">
-                <label>
-                  <input type="checkbox">
-                  <% @code_widgets.each do |widget| %>
-                  <div><%= check_box_tag "codewidget[]", widget.id,@dashboard.widgets.include?(widget) %><%= widget.name %></div>
-                  <% end %>
-                </label>
-              </div>
-              <div class="checkbox" id="jenkins-widget" style="display: none">
-                <label>
-                  <input type="checkbox">
-                  <% @jenkins_widgets.each do |widget| %>
-                  <div><%= check_box_tag "jenkinswidget[]", widget.id, @dashboard.widgets.include?(widget) %><%= widget.name %></div>
-                  <% end %>
-                </label>
+              <div class="order-list" id="code">
+                <a href="#" class="list-group-item  list">CODE CLIMATE</a>
+                <div class="number-of-widgets">0 item(s) selected</div>
               </div>
             </div>
           </div>
+          <div class="col-sm-9">
+            <div class="add-tiles-content">
+             <div class="checkbox" id="git-widget">
+              <label>
+                <% @github_widgets.each do |widget| %>
+                <div><%= check_box_tag "gitwidget[]", widget.id,@dashboard.widgets.include?(widget) %><%= widget.name %></div>
+                <% end %>
+              </label>
+            </div>
+            <div class="checkbox" id="jira-widget">
+              <label>
+                <input type="checkbox">
+                <% @jira_widgets.each do |widget| %>
+                <div><%= check_box_tag "jirawidget[]", widget.id,@dashboard.widgets.include?(widget) %><%= widget.name %></div>
+                <% end %>
+              </label>
+            </div>
+            <div class="checkbox" id="code-widget">
+              <label>
+                <input type="checkbox">
+                <% @code_widgets.each do |widget| %>
+                <div><%= check_box_tag "codewidget[]", widget.id,@dashboard.widgets.include?(widget) %><%= widget.name %></div>
+                <% end %>
+              </label>
+            </div>
+            <div class="checkbox" id="jenkins-widget" style="display: none">
+              <label>
+                <input type="checkbox">
+                <% @jenkins_widgets.each do |widget| %>
+                <div><%= check_box_tag "jenkinswidget[]", widget.id, @dashboard.widgets.include?(widget) %><%= widget.name %></div>
+                <% end %>
+              </label>
+            </div>
+          </div>
         </div>
-
       </div>
-
-      <%end%>
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      <button type="button" class="btn btn-primary">Save changes</button>
+      <%= f.submit "Save changes", :class=>"btn btn-primary" %>
     </div>
+    <%end%>
   </div>
 </div>
 </div>
-
-
-
-
 <script type="text/javascript">
   $("#style1").addClass('ss');
   $('#jira-widget').hide();

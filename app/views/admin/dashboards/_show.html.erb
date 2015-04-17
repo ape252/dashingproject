@@ -1,39 +1,46 @@
-<div id = "flash">
-<div class="panel panel-default dashboard_talks">
-	<div class="panel-body text-color-green" style="height:auto;padding: 24px;">
-		<%= @dashboard.name %>
-		<%#= clear_tag(20) %>
-		<%  edit_link = edit_admin_dashboard_path(@dashboard)
-		delete_link = admin_dashboard_path(@dashboard) %>
-
-		<%= link_to raw("<i class=\"fa fa-edit mr-5\"></i> Edit"), edit_admin_dashboard_path(@dashboard), :remote=>true, role: "menuitem", tabindex: "-1", class: "pull-right ml-10 text-color-green " %>
-		<%= link_to raw("<i class=\"fa fa-trash mr-5\"></i> Delete"), admin_dashboard_path(@dashboard), method: :delete, role: "menuitem", tabindex: "-1", data: { confirm: 'Data cant be retained back if deleted. Are you sure you want to delete the dashboard?' }, :remote=>true , class: "pull-right ml-10 text-color-green"%>
-		<%= link_to raw("<i class=\"fa fa-plus mr-5\"></i> Add New Widgets"), new_admin_dashboard_dashboard_widget_path(@dashboard), :remote=>true, id: "widgets", role: "menuitem", tabindex: "-1", class: "pull-right ml-10 text-color-green", "data-toggle" => "modal" %>
-	</div>
-</div>
-
-  <div class="panel panel-default">
-    <div class="panel-heading">
-    <h5>Selected Widgets</h5>
+ <div class="row">
+  <div class="col-sm-offset-2 col-sm-10">
+    <div class="new-widget-area">
+      <div class="title"><%= @dashboard.name %></div>
+      <div class="row customs">
+        <div class="col-sm-7">
+          <i class="fa fa-plus"></i>
+          <%= link_to  "Add New Widgets ",new_admin_dashboard_dashboard_widget_path(@dashboard), :remote=>true, 'data-toggle'=>"modal", 'data-target'=>"#myModal" %>
+        </div>
+        <div class="col-sm-5 text-right">
+          <i class="fa fa-trash"></i>
+          <%= link_to "Delete", admin_dashboard_path(@dashboard), method: :delete, data: { confirm: 'Data cant be retained back if deleted. Are you sure you want to delete the dashboard?' }, :remote=>true %>
+          <i class="fa fa-pencil-square-o"></i>
+          <%= link_to "Edit", edit_admin_dashboard_path(@dashboard), :remote=>true %>
+        </div>
+      </div>
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      </div>
     </div>
+    <!-- Selected widgets -->
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Selected widgets</h3>
+      </div>
       <%  @widgets = DashboardWidget.where(:dashboard_id => @dashboard.id) %>
       <% if @widgets.any? %>
-      <div class="scroll" style="padding:20px;">
+      <div class="panel-body selected-widgets-area">
         <% @widgets.each do |w|%>
-        <div class="panel panel-default dashboard_talks ">
-          <div class="panel-body text-color-green panel-setting" style="height:auto;padding: 24px;">
-            <%= Widget.find(w.widget_id).widget_type %> - <%= Widget.find(w.widget_id).name %>
-            <%= link_to "Configure", edit_admin_dashboard_dashboard_widget_path(@dashboard, w.widget_id), :remote=>true, role: "menuitem", tabindex: "-1", class: "pull-right ml-10 text-color-green" %>
-            <%= link_to raw("<i class=\"fa fa-trash mr-5\"></i> Delete"), admin_dashboard_dashboard_widget_path(@dashboard, w.widget_id), method: :delete, role: "menuitem", tabindex: "-1", data: { confirm: "Are you sure you want to delete the widget?" }, :remote=>true , class: "pull-right ml-10 text-color-green"%>
+        <div class="row tiles">
+          <div class="col-sm-7">
+            <a><%= Widget.find(w.widget_id).widget_type %> - <%= Widget.find(w.widget_id).name %></a>
+          </div>
+          <div class="col-sm-5 text-right">
+            <i class="fa fa-trash"></i> <%= link_to "Delete", admin_dashboard_dashboard_widget_path(@dashboard, w.widget_id), method: :delete, data: { confirm: "Are you sure you want to delete the widget?" }, :remote=>true %>
+            <a data-toggle="modal" data-target="#myModal"> <%= link_to "Configure", edit_admin_dashboard_dashboard_widget_path(@dashboard, w.widget_id), :remote=>true %> </a>
           </div>
         </div>
         <%  end %>
         <% else %>
-        <div class="panel panel-default dashboard_talks">
-          <div class="panel-body" style="height:auto;padding: 24px;">
-            No Widgets
-          </div></div>
-          <% end%>
-        </div>
+        No Widgets
+        <% end%>
       </div>
-      </div>
+    </div>
+  </div>
+</div>

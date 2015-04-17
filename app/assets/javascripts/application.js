@@ -23,6 +23,3 @@
 //= require jira/jira_sprint_progress_validations
 //= require jira/jira_sprint_remaining_validations
 //= require jira/jira_todo_validations
-
-// include validation init functions
-//= require background
