@@ -1,14 +1,13 @@
 class Admin::UsersController < ApplicationController
-	
+
+
+
 	def index
 		@users = User.order("created_at desc").paginate(:page => params[:page], :per_page => 3)
 	end
 
-	def new
+	def edit
 		@user=User.new
-		respond_to do |format|
-			format.js
-		end
 	end
 
 	def show

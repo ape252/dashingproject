@@ -1,0 +1,35 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title">Sign In</h4>
+    </div>
+    <%= form_for :user, url: admin_sessions_path, :method => :post,remote: true, html: {:class =>"form-horizontal", :id => "sign_in"} do |f| %>
+    <div class="modal-body">
+      <form class="form-horizontal">
+        <div class="form-group">
+          <label for="inputEmail" class="col-sm-3 control-label">Email id</label>
+          <div class="col-sm-7">
+            <%= f.text_field :email, :class =>"form-control",:id =>"inputemail", :placeholder => "email" %>
+          </div>
+          <div class="col-sm-2"></div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword" class="col-sm-3 control-label">Password</label>
+          <div class="col-sm-7">
+            <%= f.password_field :password, :class =>"form-control",:id =>"inputPassword",:placeholder => "Password" %>
+          </div>
+          <div class="col-sm-2"></div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <%= f.submit "Submit", :class =>"btn btn-primary ok-btn-padding" %>
+        <button type="button" class="btn btn-default ok-btn-padding" data-dismiss="modal">Cancel</button>
+      </div>
+      <% end %>
+      <hr>
+
+   </div>
+ </div>
+</div>
