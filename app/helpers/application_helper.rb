@@ -3,6 +3,7 @@ module ApplicationHelper
 	require 'httparty'
 	require 'net/http'
 	require 'json'
+	require 'jira'
 
 	def get_the_job_done(id)
 		json_obj = []
@@ -20,6 +21,10 @@ module ApplicationHelper
 				gpa(obj)
 			when "Github-Status"
 				github_status(obj)
+			when "No of open-issues"
+				open_issues(obj)
+			when "To-do-list"
+				to_do_list(obj)
 			# when (Widget.find json_obj.first["widget_id"]).name = "Github-Last-10-Commits"
 			# 	github_open_pr_job(obj)
 			# when (Widget.find json_obj.first["widget_id"]).name = "To-Do-list"
@@ -30,8 +35,8 @@ module ApplicationHelper
 			# 	github_open_pr_job(obj)
 			# when (Widget.find json_obj.first["widget_id"]).name = "Sprint-progress"
 			# 	github_open_pr_job(obj)
-			# when (Widget.find json_obj.first["widget_id"]).name = "No of open-issues"
-			# 	github_open_pr_job(obj)
+			when (Widget.find json_obj.first["widget_id"]).name = "No of open-issues"
+				github_open_pr_job(obj)
 			# when (Widget.find json_obj.first["widget_id"]).name = "GPA"
 			# 	github_open_pr_job(obj)
 			# when (Widget.find json_obj.first["widget_id"]).name = "Test-coverage"
@@ -127,15 +132,58 @@ module ApplicationHelper
 		end		
 	end
 
-	def github_last_10_commits
+
+	def open_issues(obj)
+		
+ 
+host = " https://qwinix.atlassian.net/secure/RapidBoard.jspa?rapidView=59&view=detail&selectedIssue=INOT-99"
+username = "hshri"
+password = "9036197655"
+project = "INOT-99"
+status = "OPEN"
+ 
+options = {
+            :username => username,
+            :password => password,
+            :context_path => '',
+            :site     => host,
+            :auth_type => :basic
+          }
+ 
+Dashing.scheduler.every '5m', :first_in => 0 do |job|
+  
+  client = JIRA::Client.new(options)
+  num = 0;
+ 
+  client.Issue.jql("PROJECT = \"#{project}\" AND STATUS = \"#{status}\"").each do |issue|
+      num+=1
+  end
+ Dashing.send_event('jira', { current: num})
+end
 		
 	end
 
-	def method_name
-		
+	def to_do_list(obj)
+
+Dashing.scheduler.every '2m', :first_in => 0 do |job|
+  client = JIRA::Client.new({
+    :username => "hshri",
+    :password => "9036197655",
+    :site => "https://qwinix.atlassian.net/secure/RapidBoard.jspa?rapidView=59&view=detail&selectedIssue=INOT-99",
+    :auth_type => :basic,
+    :context_path => ""
+  })
+
+
+  closed_points = client.Issue.jql("sprint in openSprints() and status = \"Done\"").map{ |issue| issue.fields['customfield_10004'] }.reduce(:+) || 0
+  todo_points = client.Issue.jql("sprint in openSprints() and status = \"To Do\"").map{ |issue| issue.fields['customfield_10004'] }.reduce(:+) || 0
+  progress_points = client.Issue.jql("sprint in openSprints() and status = \"In Progress\"").map{ |issue| issue.fields['customfield_10004'] }.reduce(:+) || 0
+  qa_points = client.Issue.jql("sprint in openSprints() and status = \"Assign to QA\"").map{ |issue| issue.fields['customfield_10004'] }.reduce(:+) || 0
+  total_points = client.Issue.jql("sprint in openSprints()").map{ |issue| issue.fields['customfield_10004'] }.reduce(:+) || 0
+
+  Dashing.send_event('jira_details', { title: "Jira Story Point Details", value: closed_points, total: total_points, progress: progress_points, todo: todo_points, qa: qa_points })
+end
+
 	end
 
-	def method_name
-		
-	end
 end
