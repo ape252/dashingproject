@@ -9,24 +9,24 @@ $(function() {
 <div class="gridster">
 
   <ul>
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+    <!-- <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="code-climate" data-view="Codeclimate" data-title="Code Climate GPA"></div>
-    </li>
-    <% if $dashboard_widget_github.present? && $dashboard_widget_github.github_status_prs == 'open' %>
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+    </li> -->
+    <%# if $dashboard_widget_github.present? && $dashboard_widget_github.github_status_prs == 'open' %>
+    <!-- <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-view="PullRequests" data-id="open_pull_requests"></div>
-    </li>
-    <% else %>
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+    </li> -->
+    <%# else %>
+    <!-- <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-view="PullRequests" data-id="closed_pull_requests"></div>
-    </li>
-    <% end %>
+    </li> -->
+    <%# end %>
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="github_status" data-view="TrafficLights" data-title="GitHub"></div>
     </li>
-    <li data-row="1" data-col="2" data-sizex="1" data-sizey="1">
+    <!-- <li data-row="1" data-col="2" data-sizex="1" data-sizey="1">
       <div data-id="jira" data-view="Number" data-title="Open Issues"></div>
-    </li>
+    </li> -->
 <!-- <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
   <div data-view="SprintProgress" data-id="sprint_progress"></div>
 </li>
