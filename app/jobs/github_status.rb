@@ -13,5 +13,5 @@ Dashing.scheduler.every '10s', :first_in => 0 do
     status: GITHUB_STATUS_TO_TRAFFIC_LIGHT_MAP[response["status"]],
     message: response["body"]
   }
-  Dashing.send_event('n_status', data)
+  Dashing.send_event('github_status', data)
 end

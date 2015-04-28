@@ -1,4 +1,4 @@
-class Dashing.n extends Dashing.Widget
+class Dashing.TrafficLights extends Dashing.Widget
   ready: ->
     @onData(this)
 
