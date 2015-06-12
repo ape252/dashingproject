@@ -63,6 +63,248 @@ $(function() {
     <% end %>
   </ul>
 </div>
+<script type='text/javascript'>
+  $(".gridster").hide();
+  $(window).load(function() {
+    //Dashing.gridsterLayout('[{"col":2,"row":1},{"col":1,"row":1},{"col":3,"row":1},{"col":4,"row":1},{"col":1,"row":2},{"col":3,"row":2}]')
+    
+    setTimeout(function(){
+      var count = $(".gridster").find(".gs_w").length;
+      if( count === 1 ){
+        $(".gs_w:eq(0)").attr("data-row", "1").attr("data-col", "1").attr("data-sizex", "4").attr("data-sizey", "2");
+      }
+      if( count === 2 ){
+        $(".gs_w:eq(0)").attr("data-row", "1").attr("data-col", "1").attr("data-sizex", "2").attr("data-sizey", "2");
+        $(".gs_w:eq(1)").attr("data-row", "1").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "2");
+      }
+      if( count === 3 ){
+         if( $(".gs_w:eq(0)").find(".widget-jira-burndown").length === 1 ){
+             $(".gs_w:eq(0)").attr("data-row", "1").attr("data-col", "1").attr("data-sizex", "4").attr("data-sizey", "1");
+            $(".gs_w:eq(1)").attr("data-row", "2").attr("data-col", "1").attr("data-sizex", "3").attr("data-sizey", "1");
+            $(".gs_w:eq(2)").attr("data-row", "2").attr("data-col", "4").attr("data-sizex", "1").attr("data-sizey", "1");
+          }else if( $(".gs_w:eq(1)").find(".widget-jira-burndown").length === 1 ){
+             $(".gs_w:eq(0)").attr("data-row", "1").attr("data-col", "1").attr("data-sizex", "4").attr("data-sizey", "1");
+            $(".gs_w:eq(1)").attr("data-row", "2").attr("data-col", "1").attr("data-sizex", "3").attr("data-sizey", "1");
+            $(".gs_w:eq(2)").attr("data-row", "2").attr("data-col", "4").attr("data-sizex", "1").attr("data-sizey", "1");
+            }else if( $(".gs_w:eq(2)").find(".widget-jira-burndown").length === 1 ){
+             $(".gs_w:eq(0)").attr("data-row", "1").attr("data-col", "1").attr("data-sizex", "2").attr("data-sizey", "1");
+            $(".gs_w:eq(1)").attr("data-row", "1").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "1");
+            $(".gs_w:eq(2)").attr("data-row", "2").attr("data-col", "1").attr("data-sizex", "4").attr("data-sizey", "1");
+
+          }else{
+            $(".gs_w:eq(0)").attr("data-row", "1").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "2");
+            $(".gs_w:eq(1)").attr("data-row", "1").attr("data-col", "2").attr("data-sizex", "1").attr("data-sizey", "2");
+            $(".gs_w:eq(2)").attr("data-row", "1").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "2");
+          }
+        
+
+      }
+      if( count === 4 ){
+      
+         if( $(".gs_w:eq(0)").find(".widget-jira-burndown").length === 1 ){
+            $(".gs_w:eq(0)").attr("data-row", "1").attr("data-col", "1").attr("data-sizex", "2").attr("data-sizey", "1");
+            $(".gs_w:eq(1)").attr("data-row", "1").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "1");
+            $(".gs_w:eq(2)").attr("data-row", "2").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "1");
+            $(".gs_w:eq(3)").attr("data-row", "2").attr("data-col", "1").attr("data-sizex", "2").attr("data-sizey", "1");  
+          }else if( $(".gs_w:eq(1)").find(".widget-jira-burndown").length === 1 ){
+            $(".gs_w:eq(0)").attr("data-row", "1").attr("data-col", "1").attr("data-sizex", "2").attr("data-sizey", "1");
+            $(".gs_w:eq(1)").attr("data-row", "1").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "1");
+            $(".gs_w:eq(2)").attr("data-row", "2").attr("data-col", "1").attr("data-sizex", "2").attr("data-sizey", "1");
+            $(".gs_w:eq(3)").attr("data-row", "2").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "1");  
+          }else if( $(".gs_w:eq(2)").find(".widget-jira-burndown").length === 1 ){
+           $(".gs_w:eq(0)").attr("data-row", "1").attr("data-col", "1").attr("data-sizex", "2").attr("data-sizey", "1");
+            $(".gs_w:eq(1)").attr("data-row", "1").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "1");
+            $(".gs_w:eq(2)").attr("data-row", "2").attr("data-col", "1").attr("data-sizex", "2").attr("data-sizey", "1");
+            $(".gs_w:eq(3)").attr("data-row", "2").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "1");  
+          }else if( $(".gs_w:eq(3)").find(".widget-jira-burndown").length === 1 ){
+            $(".gs_w:eq(0)").attr("data-row", "1").attr("data-col", "1").attr("data-sizex", "2").attr("data-sizey", "1");
+            $(".gs_w:eq(1)").attr("data-row", "1").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "1");
+            $(".gs_w:eq(2)").attr("data-row", "2").attr("data-col", "1").attr("data-sizex", "2").attr("data-sizey", "1");
+            $(".gs_w:eq(3)").attr("data-row", "2").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "1");  
+          }else{
+            $(".gs_w:eq(0)").attr("data-row", "1").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "2");
+            $(".gs_w:eq(1)").attr("data-row", "1").attr("data-col", "2").attr("data-sizex", "1").attr("data-sizey", "2");
+            $(".gs_w:eq(2)").attr("data-row", "1").attr("data-col", "3").attr("data-sizex", "1").attr("data-sizey", "2");
+            $(".gs_w:eq(3)").attr("data-row", "1").attr("data-col", "4").attr("data-sizex", "1").attr("data-sizey", "2");  
+          }
+
+      }
+      if( count === 5 ){
+        if( $(".gs_w:eq(0)").find(".widget-jira-burndown").length === 1 ){
+
+            $(".gs_w:eq(0)").attr("data-row", "1").attr("data-col", "1").attr("data-sizex", "2").attr("data-sizey", "1");
+            $(".gs_w:eq(1)").attr("data-row", "1").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "1");
+            $(".gs_w:eq(2)").attr("data-row", "2").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(3)").attr("data-row", "2").attr("data-col", "2").attr("data-sizex", "1").attr("data-sizey", "1");  
+            $(".gs_w:eq(4)").attr("data-row", "2").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "1");  
+            }else if( $(".gs_w:eq(1)").find(".widget-jira-burndown").length === 1 ){
+            $(".gs_w:eq(0)").attr("data-row", "1").attr("data-col", "1").attr("data-sizex", "2").attr("data-sizey", "1");
+            $(".gs_w:eq(1)").attr("data-row", "1").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "1");
+            $(".gs_w:eq(2)").attr("data-row", "2").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(3)").attr("data-row", "2").attr("data-col", "2").attr("data-sizex", "1").attr("data-sizey", "1");  
+            $(".gs_w:eq(4)").attr("data-row", "2").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "1");  
+          }else if( $(".gs_w:eq(2)").find(".widget-jira-burndown").length === 1 ){
+            $(".gs_w:eq(0)").attr("data-row", "1").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(1)").attr("data-row", "1").attr("data-col", "2").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(2)").attr("data-row", "1").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "1");
+            $(".gs_w:eq(3)").attr("data-row", "2").attr("data-col", "1").attr("data-sizex", "2").attr("data-sizey", "1");  
+            $(".gs_w:eq(4)").attr("data-row", "2").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "1");  
+           }else if( $(".gs_w:eq(3)").find(".widget-jira-burndown").length === 1 ){
+            $(".gs_w:eq(0)").attr("data-row", "1").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(1)").attr("data-row", "1").attr("data-col", "2").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(2)").attr("data-row", "1").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "1");
+            $(".gs_w:eq(3)").attr("data-row", "2").attr("data-col", "1").attr("data-sizex", "2").attr("data-sizey", "1");  
+            $(".gs_w:eq(4)").attr("data-row", "2").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "1");  
+          }else if( $(".gs_w:eq(4)").find(".widget-jira-burndown").length === 1 ){
+            $(".gs_w:eq(0)").attr("data-row", "1").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(1)").attr("data-row", "1").attr("data-col", "2").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(2)").attr("data-row", "1").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "1");
+            $(".gs_w:eq(3)").attr("data-row", "2").attr("data-col", "1").attr("data-sizex", "2").attr("data-sizey", "1");  
+            $(".gs_w:eq(4)").attr("data-row", "2").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "1");  
+
+
+          }else{
+          $(".gs_w:eq(0)").attr("data-row", "1").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "1");
+          $(".gs_w:eq(1)").attr("data-row", "1").attr("data-col", "2").attr("data-sizex", "1").attr("data-sizey", "1");
+          $(".gs_w:eq(2)").attr("data-row", "1").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "1");
+          $(".gs_w:eq(3)").attr("data-row", "2").attr("data-col", "1").attr("data-sizex", "2").attr("data-sizey", "1");
+          $(".gs_w:eq(4)").attr("data-row", "2").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "1");
+        }
+      }
+      if( count === 6 ){
+        if( $(".gs_w:eq(0)").find(".widget-jira-burndown").length === 1 ){
+
+            $(".gs_w:eq(0)").attr("data-row", "1").attr("data-col", "1").attr("data-sizex", "2").attr("data-sizey", "1");
+            $(".gs_w:eq(1)").attr("data-row", "1").attr("data-col", "3").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(2)").attr("data-row", "1").attr("data-col", "4").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(3)").attr("data-row", "2").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "1");  
+            $(".gs_w:eq(4)").attr("data-row", "2").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "1");  
+            $(".gs_w:eq(5)").attr("data-row", "2").attr("data-col", "4").attr("data-sizex", "1").attr("data-sizey", "1");  
+            }else if( $(".gs_w:eq(1)").find(".widget-jira-burndown").length === 1 ){
+            $(".gs_w:eq(0)").attr("data-row", "1").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(1)").attr("data-row", "1").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "1");
+            $(".gs_w:eq(2)").attr("data-row", "1").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(3)").attr("data-row", "2").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "1");  
+            $(".gs_w:eq(4)").attr("data-row", "2").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "1");  
+           $(".gs_w:eq(5)").attr("data-row", "2").attr("data-col", "4").attr("data-sizex", "1").attr("data-sizey", "1");    
+           }else if( $(".gs_w:eq(2)").find(".widget-jira-burndown").length === 1 ){
+            $(".gs_w:eq(0)").attr("data-row", "1").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(1)").attr("data-row", "1").attr("data-col", "2").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(2)").attr("data-row", "1").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "1");
+            $(".gs_w:eq(3)").attr("data-row", "2").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "1");  
+            $(".gs_w:eq(4)").attr("data-row", "2").attr("data-col", "2").attr("data-sizex", "1").attr("data-sizey", "1");  
+            $(".gs_w:eq(5)").attr("data-row", "2").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "1");  
+           }else if( $(".gs_w:eq(3)").find(".widget-jira-burndown").length === 1 ){
+            $(".gs_w:eq(0)").attr("data-row", "1").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(1)").attr("data-row", "1").attr("data-col", "2").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(2)").attr("data-row", "1").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "1");
+            $(".gs_w:eq(3)").attr("data-row", "2").attr("data-col", "1").attr("data-sizex", "2").attr("data-sizey", "1");  
+            $(".gs_w:eq(4)").attr("data-row", "2").attr("data-col", "3").attr("data-sizex", "1").attr("data-sizey", "1");  
+            $(".gs_w:eq(5)").attr("data-row", "2").attr("data-col", "4").attr("data-sizex", "1").attr("data-sizey", "1");  
+          }else if( $(".gs_w:eq(4)").find(".widget-jira-burndown").length === 1 ){
+            $(".gs_w:eq(0)").attr("data-row", "1").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(1)").attr("data-row", "1").attr("data-col", "2").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(2)").attr("data-row", "1").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "1");
+            $(".gs_w:eq(3)").attr("data-row", "2").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "1");  
+            $(".gs_w:eq(4)").attr("data-row", "2").attr("data-col", "2").attr("data-sizex", "2").attr("data-sizey", "1");  
+            $(".gs_w:eq(5)").attr("data-row", "2").attr("data-col", "4").attr("data-sizex", "1").attr("data-sizey", "1");  
+          }else if( $(".gs_w:eq(5)").find(".widget-jira-burndown").length === 1 ){
+            $(".gs_w:eq(0)").attr("data-row", "1").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(1)").attr("data-row", "1").attr("data-col", "2").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(2)").attr("data-row", "1").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "1");
+            $(".gs_w:eq(3)").attr("data-row", "2").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "1");  
+            $(".gs_w:eq(4)").attr("data-row", "2").attr("data-col", "2").attr("data-sizex", "1").attr("data-sizey", "1");  
+            $(".gs_w:eq(5)").attr("data-row", "2").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "1");  
+
+
+          }else{
+        $(".gs_w:eq(0)").attr("data-row", "1").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "1");
+        $(".gs_w:eq(1)").attr("data-row", "1").attr("data-col", "2").attr("data-sizex", "1").attr("data-sizey", "1");
+        $(".gs_w:eq(2)").attr("data-row", "1").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "1");
+        $(".gs_w:eq(3)").attr("data-row", "2").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "1");
+        $(".gs_w:eq(4)").attr("data-row", "2").attr("data-col", "2").attr("data-sizex", "1").attr("data-sizey", "1");
+        $(".gs_w:eq(5)").attr("data-row", "2").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "1");
+      }
+      }
+      if( count === 7 ){
+      if( $(".gs_w:eq(0)").find(".widget-jira-burndown").length === 1 ){
+
+            $(".gs_w:eq(0)").attr("data-row", "1").attr("data-col", "1").attr("data-sizex", "2").attr("data-sizey", "1");
+            $(".gs_w:eq(1)").attr("data-row", "1").attr("data-col", "3").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(2)").attr("data-row", "1").attr("data-col", "4").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(3)").attr("data-row", "2").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "1");  
+            $(".gs_w:eq(4)").attr("data-row", "2").attr("data-col", "2").attr("data-sizex", "1").attr("data-sizey", "1");  
+            $(".gs_w:eq(5)").attr("data-row", "2").attr("data-col", "3").attr("data-sizex", "1").attr("data-sizey", "1");  
+             $(".gs_w:eq(6)").attr("data-row", "2").attr("data-col", "4").attr("data-sizex", "1").attr("data-sizey", "1");  
+            }else if( $(".gs_w:eq(1)").find(".widget-jira-burndown").length === 1 ){
+            $(".gs_w:eq(0)").attr("data-row", "1").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(1)").attr("data-row", "1").attr("data-col", "2").attr("data-sizex", "2").attr("data-sizey", "1");
+            $(".gs_w:eq(2)").attr("data-row", "1").attr("data-col", "4").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(3)").attr("data-row", "2").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "1");  
+            $(".gs_w:eq(4)").attr("data-row", "2").attr("data-col", "2").attr("data-sizex", "1").attr("data-sizey", "1");  
+           $(".gs_w:eq(5)").attr("data-row", "2").attr("data-col", "3").attr("data-sizex", "1").attr("data-sizey", "1");    
+            $(".gs_w:eq(6)").attr("data-row", "2").attr("data-col", "4").attr("data-sizex", "1").attr("data-sizey", "1");  
+           }else if( $(".gs_w:eq(2)").find(".widget-jira-burndown").length === 1 ){
+            $(".gs_w:eq(0)").attr("data-row", "1").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(1)").attr("data-row", "1").attr("data-col", "2").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(2)").attr("data-row", "1").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "1");
+            $(".gs_w:eq(3)").attr("data-row", "2").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "1");  
+            $(".gs_w:eq(4)").attr("data-row", "2").attr("data-col", "2").attr("data-sizex", "1").attr("data-sizey", "1");  
+            $(".gs_w:eq(5)").attr("data-row", "2").attr("data-col", "3").attr("data-sizex", "1").attr("data-sizey", "1");  
+           $(".gs_w:eq(6)").attr("data-row", "2").attr("data-col", "4").attr("data-sizex", "1").attr("data-sizey", "1");  
+           }else if( $(".gs_w:eq(3)").find(".widget-jira-burndown").length === 1 ){
+            $(".gs_w:eq(0)").attr("data-row", "1").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(1)").attr("data-row", "1").attr("data-col", "2").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(2)").attr("data-row", "2").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(3)").attr("data-row", "1").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "1");  
+            $(".gs_w:eq(4)").attr("data-row", "2").attr("data-col", "2").attr("data-sizex", "1").attr("data-sizey", "1");  
+            $(".gs_w:eq(5)").attr("data-row", "2").attr("data-col", "3").attr("data-sizex", "1").attr("data-sizey", "1");  
+            $(".gs_w:eq(6)").attr("data-row", "2").attr("data-col", "4").attr("data-sizex", "1").attr("data-sizey", "1");  
+          }else if( $(".gs_w:eq(4)").find(".widget-jira-burndown").length === 1 ){
+            $(".gs_w:eq(0)").attr("data-row", "1").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(1)").attr("data-row", "1").attr("data-col", "2").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(2)").attr("data-row", "1").attr("data-col", "3").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(3)").attr("data-row", "1").attr("data-col", "4").attr("data-sizex", "1").attr("data-sizey", "1");  
+            $(".gs_w:eq(4)").attr("data-row", "2").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "1");  
+            $(".gs_w:eq(5)").attr("data-row", "2").attr("data-col", "2").attr("data-sizex", "2").attr("data-sizey", "1");  
+            $(".gs_w:eq(6)").attr("data-row", "2").attr("data-col", "4").attr("data-sizex", "1").attr("data-sizey", "1");  
+          }else if( $(".gs_w:eq(5)").find(".widget-jira-burndown").length === 1 ){
+            $(".gs_w:eq(0)").attr("data-row", "1").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(1)").attr("data-row", "1").attr("data-col", "2").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(2)").attr("data-row", "1").attr("data-col", "3").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(3)").attr("data-row", "1").attr("data-col", "4").attr("data-sizex", "1").attr("data-sizey", "1");  
+            $(".gs_w:eq(4)").attr("data-row", "2").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "1");  
+            $(".gs_w:eq(5)").attr("data-row", "2").attr("data-col", "2").attr("data-sizex", "2").attr("data-sizey", "1");  
+            $(".gs_w:eq(6)").attr("data-row", "2").attr("data-col", "4").attr("data-sizex", "1").attr("data-sizey", "1");  
+
+}else if( $(".gs_w:eq(6)").find(".widget-jira-burndown").length === 1 ){
+            $(".gs_w:eq(0)").attr("data-row", "1").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(1)").attr("data-row", "1").attr("data-col", "2").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(2)").attr("data-row", "1").attr("data-col", "3").attr("data-sizex", "1").attr("data-sizey", "1");
+            $(".gs_w:eq(3)").attr("data-row", "1").attr("data-col", "4").attr("data-sizex", "1").attr("data-sizey", "1");  
+            $(".gs_w:eq(4)").attr("data-row", "2").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "1");  
+            $(".gs_w:eq(5)").attr("data-row", "2").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "1");  
+            $(".gs_w:eq(6)").attr("data-row", "2").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "1");  
+
+          }else{
+
+        $(".gs_w:eq(0)").attr("data-row", "1").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "1");
+        $(".gs_w:eq(1)").attr("data-row", "1").attr("data-col", "2").attr("data-sizex", "1").attr("data-sizey", "1");
+        $(".gs_w:eq(2)").attr("data-row", "1").attr("data-col", "3").attr("data-sizex", "1").attr("data-sizey", "1");
+        $(".gs_w:eq(3)").attr("data-row", "1").attr("data-col", "4").attr("data-sizex", "1").attr("data-sizey", "1");
+        $(".gs_w:eq(4)").attr("data-row", "2").attr("data-col", "1").attr("data-sizex", "1").attr("data-sizey", "1");
+        $(".gs_w:eq(5)").attr("data-row", "2").attr("data-col", "2").attr("data-sizex", "1").attr("data-sizey", "1");
+        $(".gs_w:eq(6)").attr("data-row", "2").attr("data-col", "3").attr("data-sizex", "2").attr("data-sizey", "1");
+
+      }
+    }
+
+      $(".gridster").fadeIn();
+    }, 2000)
+    
+
+  });
+</script>
 <style> 
   .hh{ background: black;
     border-bottom: 4px;

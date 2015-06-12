@@ -20,14 +20,14 @@
   border-right: none !important;
 }
 .page-title {
-  background-color: #22CD76;font-size: 32px;padding: 15px 0px;
+  background-color: #e0131e;font-size: 32px;padding: 15px 0px;
   text-align: center;color: #ffffff;font-weight: 300;margin-bottom: 30px;
 }
 .header-icons {
   font-size: 25px !important;
 }
 .dashbords .tiles {
-  color: #22CD76;font-size: 16px;display: block;
+  color: #e0131e;font-size: 16px;display: block;
   list-style: none;padding: 25px;border: 1px solid #cccccc;border-radius: 4px;
   margin-bottom: 20px;background: #fafafa; /* Old browsers */
   background: -moz-linear-gradient(top, #fafafa 0%, #e1e1e1 100%); /* FF3.6+ */
@@ -51,7 +51,7 @@
   border: 1px solid #cccccc;padding: 15px;margin-bottom: 20px;
 }
 .new-widget-area .title {
-  color: #22CD76;font-size: 18px;margin-bottom: 15px;
+  color: #e0131e;font-size: 18px;margin-bottom: 15px;
 }
 .new-widget-area .customs a {
   color: #454545;margin-right: 10px;
@@ -60,14 +60,14 @@
   text-decoration: none;
 }
 .modal-widgets a.widget-name {
-  text-transform: uppercase;font-size: 18px;color: #22CD76;padding: 10px 15px;
+  text-transform: uppercase;font-size: 18px;color: #e0131e;padding: 10px 15px;
   text-align: center;display: block;border-bottom: 1px solid #cccccc;
 }
 .modal-widgets a.widget-name:hover, .modal-widgets a.selected {
-  text-decoration: none;background-color: #22CD76;color: #ffffff;
+  text-decoration: none;background-color: #e0131e;color: #ffffff;
 }
 .modal-widgets a .num-widgets {
-  font-size: 12px;color: #22CD76;text-transform: lowercase;
+  font-size: 12px;color: #e0131e;text-transform: lowercase;
 }
 .border-top-none {
   border-top: none !important;
@@ -76,7 +76,7 @@
   padding: 15px 30px;height: 275px;overflow-y:scroll;
 }
 .selected-widgets-area .tiles {
-  color: #22CD76;font-size: 14px;display: block;
+  color: #e0131e;font-size: 14px;display: block;
   list-style: none;padding: 10px;border: 1px solid #cccccc;border-radius: 4px;
   margin-bottom: 20px;background: #fafafa; /* Old browsers */
   background: -moz-linear-gradient(top, #fafafa 0%, #e1e1e1 100%); /* FF3.6+ */
@@ -88,13 +88,13 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#e1e1e1',GradientType=0 ); /* IE6-9 */
 }
 .selected-widgets-area .tiles a {
-  color: #22CD76;margin-right: 10px;
+  color: #e0131e;margin-right: 10px;
 }
 .selected-widgets-area .tiles a:hover {
   text-decoration: none;
 }
 .nodashboard{
   text-align: center;
-  color: #22CD76;
+  color: #e0131e;
   font-size: 25px;
 }
