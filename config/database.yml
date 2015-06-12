@@ -17,7 +17,7 @@ test:
   encoding: unicode
   reconnect: false
   database: d_dash_test
-  pool: 5
+  pool: 30
   username: postgres
   password: password
   host: localhost
@@ -28,7 +28,7 @@ production:
   encoding: unicode
   reconnect: false
   database: d_dash_production
-  pool: 5
+  pool: 30
   username: postgres
   password: password
   host: localhost
@@ -39,7 +39,7 @@ uat:
   encoding: unicode
   reconnect: false
   database: d_dash_uat
-  pool: 5
+  pool: 30
   username: postgres
   password: password
   host: localhost
