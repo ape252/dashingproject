@@ -4,9 +4,9 @@ set :rails_env, :uat
 set :deploy_to, '/u01/apps/qwinix/it_dashboard'
 set :log_level, :debug
 
-role :app, %w{deploy@52.26.172.112}
-role :web, %w{deploy@52.26.172.112}
-role :db,  %w{deploy@52.26.172.112}
+role :app, %w{deploy@52.26.99.1}
+role :web, %w{deploy@52.26.99.1}
+role :db,  %w{deploy@52.26.99.1}
 
 # Extended Server Syntax
 # ======================
@@ -14,7 +14,7 @@ role :db,  %w{deploy@52.26.172.112}
 # definition into the server list. The second argument
 # something that quacks like a hash can be used to set
 # extended properties on the server.
-server '52.26.172.112', :user => 'deploy', :roles => %w{web app db}
+server '52.26.99.1', :user => 'deploy', :roles => %w{web app db}
 set :ssh_options, {
    #verbose: :debug,
    keys: %w(~/.ssh/id_rsa.pub),
