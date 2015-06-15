@@ -21,4 +21,3 @@
 //= require jira/jira_no_of_issues_validations
 //= require background
 //= require create_user
-//= require_tree .
