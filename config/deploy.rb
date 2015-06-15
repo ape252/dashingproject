@@ -86,17 +86,17 @@ namespace :deploy do
 
 end
 
-# namespace :assets do
-#     task :precompile do
-#       on roles(fetch(:assets_roles)) do
-#         within release_path do
-#           with rails_env: fetch(:rails_env) do
-#             execute :rake, "assets:precompile RAILS_ENV=production"
-#           end
-#         end
-#       end
-#     end
-#   end
+namespace :assets do
+    task :precompile do
+      on roles(fetch(:assets_roles)) do
+        within release_path do
+          with rails_env: fetch(:rails_env) do
+            execute :rake, "assets:precompile RAILS_ENV=it"
+          end
+        end
+      end
+    end
+  end
 namespace :puma do
   desc 'Create Directories for Puma Pids and Socket'
   task :make_dirs do
