@@ -75,8 +75,8 @@ module Dashing
           newrelic_job(obj) if obj["status"] == "configured"
         when "Response-Time" 
           newrelic_job(obj) if obj["status"] == "configured"
-           when "sonar" 
-          sonar_job(obj) if obj["status"] == "configured"
+        when "sonar" 
+          sonar(obj) if obj["status"] == "configured"
         when "Burn Down Chart" 
           BurnDown.burn_down_chart(obj) if obj["status"] == "configured"
         end
