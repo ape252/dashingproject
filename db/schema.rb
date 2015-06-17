@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150515055709) do
+ActiveRecord::Schema.define(version: 20150617063343) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,9 @@ ActiveRecord::Schema.define(version: 20150515055709) do
     t.string   "jenkins_name"
     t.string   "jenkins_password"
     t.string   "jenkins_url"
+    t.string   "key"
+    t.string   "sonar_server"
+    t.string   "matric"
   end
 
   add_index "dashboard_widgets", ["dashboard_id"], name: "index_dashboard_widgets_on_dashboard_id", using: :btree

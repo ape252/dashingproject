@@ -4,7 +4,7 @@ User.all.each do |u|
   puts "User '#{u.name}' created"
 end
 
-# Widget.delete_all
+Widget.delete_all
 Widget.create(name:'Github-Status', widget_type: 'Github')
 Widget.create(name:'Github-Open-PR', widget_type: 'Github')
 Widget.create(name:'Github-Closed-PR', widget_type: 'Github')
@@ -21,6 +21,12 @@ Widget.create(name:'Build-test', widget_type: 'Jenkins')
 
 Widget.create(name:'Error-Rate', widget_type: 'Newrelic')
 Widget.create(name:'Response-Time', widget_type: 'Newrelic')
+
+
+Widget.create(name:'sonar', widget_type: 'sonar')
+
+Widget.create(name:'rally', widget_type: 'rally')
+
 
 Widget.all.each do |u|
 	puts "Widget '#{u.name}' created"

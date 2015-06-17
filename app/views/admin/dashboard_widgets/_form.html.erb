@@ -61,6 +61,16 @@
                   <%=  @count %> item(s) selected</div>
                 </a>
               </div>
+              <div class="order-list" id="sonar">
+                <a href="#" class="widget-name">Sonar
+                  <div class="num-widgets number-of-widgets">
+                  <% @count = 0 %>
+                  <% @sonar_widgets.each do |widget| %>
+                  <% if dashwidgets.include?(widget.id) %>
+                  <% @count += 1 %><% end %><% end %>
+                  <%=  @count %> item(s) selected</div>
+                </a>
+              </div>
             </div>
           </div>
           <div class="col-sm-8">
@@ -120,6 +130,17 @@
                 <% end %>
               </div>
             </div>
+            <div class="checkbox" id="sonar-widget">
+              <div>
+                <% @sonar_widgets.each do |widget| %>
+                <% unless dashwidgets.include?(widget.id) %>
+                <div><%= check_box_tag "sonarwidget[]", widget.id %><%= widget.name %></div>
+                <% else %>
+                <div><input type="checkbox" checked="checked" disabled="true"></div><%= widget.name %>
+                <% end %>
+                <% end %>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -138,6 +159,7 @@
   $('#code-widget').hide();
   $('#jenkins-widget').hide();
   $('#newrelic-widget').hide();
+  $('#sonar-widget').hide();
   $(document).ready(function() {
     $('.widget-name').on('click', function(){
       $('.widget-name').removeClass('selected');
