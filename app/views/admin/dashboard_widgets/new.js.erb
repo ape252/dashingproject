@@ -12,6 +12,8 @@ $("#git").click(function(){
   $("#code").removeClass("selected");
   $("#jenkins").removeClass("selected");
   $("#newrelic").removeClass("selected");
+    $("#sonar").removeClass("selected");
+
 
 
   $('#git-widget').show();
@@ -19,6 +21,8 @@ $("#git").click(function(){
   $('#code-widget').hide();
   $('#jenkins-widget').hide();
   $('#newrelic-widget').hide();
+  $('#sonar-widget').hide();
+
 
 });
 $("#jira").click(function(){
@@ -28,12 +32,19 @@ $("#jira").click(function(){
   $("#code").removeClass("selected");
   $("#jenkins").removeClass("selected");
   $("#newrelic").removeClass("selected");
+  $("#sonar").removeClass("selected");
+
+
+
 
   $('#git-widget').hide();
   $('#jira-widget').show();
   $('#code-widget').hide();
   $('#jenkins-widget').hide();
   $('#newrelic-widget').hide();
+  $('#sonar-widget').hide();
+
+
 });
 $("#code").click(function(){
 
@@ -42,12 +53,20 @@ $("#code").click(function(){
   $("#git").removeClass("selected");
   $("#jenkins").removeClass("selected");
   $("#newrelic").removeClass("selected");
+  $("#sonar").removeClass("selected");
+
+
+
 
   $('#git-widget').hide();
   $('#jira-widget').hide();
   $('#code-widget').show();
   $('#jenkins-widget').hide();
   $('#newrelic-widget').hide();
+
+  $('#sonar-widget').hide();
+
+
 });
 $("#jenkins").click(function(){
 
@@ -56,12 +75,20 @@ $("#jenkins").click(function(){
   $("#git").removeClass("selected");
   $("#code").removeClass("selected");
   $("#newrelic").removeClass("selected");
+  $("#sonar").removeClass("selected");
+
+
+
 
   $('#git-widget').hide();
   $('#jira-widget').hide();
   $('#code-widget').hide();
   $('#jenkins-widget').show();
   $('#newrelic-widget').hide();
+
+  $('#sonar-widget').hide();
+
+
 });
 $("#newrelic").click(function(){
 
@@ -70,12 +97,43 @@ $("#newrelic").click(function(){
   $("#git").removeClass("selected");
   $("#code").removeClass("selected");
   $("#newrelic").addClass("selected");
+  $("#sonar").removeClass("selected");
+
+
+
 
   $('#git-widget').hide();
   $('#jira-widget').hide();
   $('#code-widget').hide();
   $('#jenkins-widget').hide();
   $('#newrelic-widget').show();
+  $('#sonar-widget').hide();
+
+
+
 });
+
+
+
+
+$("#sonar").click(function(){
+
+  $("#jenkins").removeClass("selected");
+  $("#jira").removeClass("selected");
+  $("#git").removeClass("selected");
+  $("#code").removeClass("selected");
+  $("#newrelic").removeClass("selected");
+  $("#sonar").addClass("selected");
+
+  $('#git-widget').hide();
+  $('#jira-widget').hide();
+  $('#code-widget').hide();
+  $('#jenkins-widget').hide();
+  $('#newrelic-widget').hide();
+  $('#sonar-widget').show();
+
+
+});
+
 
 

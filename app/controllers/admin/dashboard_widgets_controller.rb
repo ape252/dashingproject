@@ -15,6 +15,10 @@ class Admin::DashboardWidgetsController < ApplicationController
     @code_widgets = @widgets.all.select{|w|w.name if w.widget_type=='Code Climate'}
     @jenkins_widgets = @widgets.all.select{|w|w.name if w.widget_type=='Jenkins'}
     @newreli_widgets = @widgets.all.select{|w|w.name if w.widget_type=='Newrelic'&& w.name != 'Response-Time'}
+    @sonar_widgets = @widgets.all.select{|w|w.name if w.widget_type=='sonar'}
+    @rally_widgets = @widgets.all.select{|w|w.name if w.widget_type=='rally'}
+
+
   end
 
   def create
@@ -54,7 +58,9 @@ class Admin::DashboardWidgetsController < ApplicationController
     @dashboard_widget.github_status_prs = params[:dashboard_widget][:github_status_prs]
     @dashboard_widget.jenkins_name = params[:dashboard_widget][:jenkins_name]
     @dashboard_widget.jenkins_password = params[:dashboard_widget][:jenkins_password]
-    @dashboard_widget.jenkins_url = params[:dashboard_widget][:jenkins_url]
+    @dashboard_widget.key = params[:dashboard_widget][:key]
+    @dashboard_widget.sonar_server = params[:dashboard_widget][:sonar_server]
+    @dashboard_widget.matric = params[:dashboard_widget][:matric ]
     @dashboard_widget.status = "configured"
     if @dashboard_widget.valid?
      @dashboard_widget.save
@@ -93,7 +99,7 @@ def default_item_name
 end
 
 def widget_params
-  [params["gitwidget"],params["jirawidget"],params["codewidget"],params["jenkinswidget"]].compact.reduce([], :|)
+  [params["gitwidget"],params["jirawidget"],params["codewidget"],params["jenkinswidget"],params["sonarwidget"],params["rallywidget"]].compact.reduce([], :|)
 end
 
 def set_navs

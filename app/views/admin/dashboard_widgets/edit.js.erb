@@ -51,6 +51,22 @@ $('#myModal').modal('show');
 jira_no_of_issues_validator()
 <% end %>
 
+<% if @widget.widget_type == "rally" && @widget.name == "rally" %>
+$('#myModal').html("<%= escape_javascript(render(:partial=>'/admin/dashboard_widgets/jenkins/rally'))  %>");
+$('#myModal').modal('show');
+
+<% end %>
+
+
+
+
+<% if @widget.widget_type == "sonar" && @widget.name == "sonar" %>
+$('#myModal').html("<%= escape_javascript(render(:partial=>'/admin/dashboard_widgets/sonar/sonar'))  %>");
+$('#myModal').modal('show');
+sonar_validator()
+<%end%>
+
+
 <% if @widget.widget_type == "Newrelic" && @widget.name == "Error-Rate" %>
 $('#myModal').html("<%= escape_javascript(render(:partial=>'/admin/dashboard_widgets/newrelic/newrelic'))  %>");
 $('#myModal').modal('show');

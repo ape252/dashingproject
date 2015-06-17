@@ -9,7 +9,7 @@ function fnCountItem (_name) {
  }
 }
 
-$(document).on("change", "#git-widget input[type='checkbox'], #jira-widget input[type='checkbox'], #jenkins-widget input[type='checkbox'], #newrelic-widget input[type='checkbox'], #code-widget input[type='checkbox'] ", function () {
+$(document).on("change", "#git-widget input[type='checkbox'], #jira-widget input[type='checkbox'], #jenkins-widget input[type='checkbox'], #newrelic-widget input[type='checkbox'], #code-widget input[type='checkbox'], #sonar-widget input[type='checkbox'] ", function () {
     fnCountItem(this.parentNode.parentNode.parentElement.id.split("-")[0]);
 });
 

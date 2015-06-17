@@ -1,0 +1,39 @@
+<div id="popup_modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Configure Widget</h4>
+      </div>
+      <%= form_for([:admin, @dashboard_widget], url: admin_dashboard_dashboard_widget_path(@dashboard, @dashboard_widget), :html => {:id=>"form_sonar_widget", :method =>  :patch, :remote=>true}) do |f| %>
+      <div class="modal-body">
+        <div class="panel-body" style="height:auto;">
+          <div class="form-group">
+          <label for="inputName" class="col-sm-4 control-label">Project_Key*</label>
+            <div class="col-sm-8">
+              <%= f.text_field :key, :class=>"form-control" %>
+            </div>
+          </div><br><br>
+          <div class="form-group">
+          <label for="inputName" class="col-sm-4 control-label">Sonar_server*</label>
+            <div class="col-sm-8">
+              <%= f.text_field :sonar_server, :class=>"form-control" %>
+            </div>
+          </div><br><br>
+          <div class="form-group">
+          <label for="inputName" class="col-sm-4 control-label">Sonar_metricMatric*</label>
+            <div class="col-sm-8">
+              <%= f.text_field :matric, :class=>"form-control" %>
+            </div>
+          </div><br><br>
+          <br><br>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <%= f.submit "Submit", :class=>"btn btn-primary" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
