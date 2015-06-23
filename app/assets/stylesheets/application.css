@@ -22,3 +22,8 @@ img.centered {
   margin-left: auto;
   margin-right: auto
 }
+.gridster li div {
+     display: table;
+     width: 100%;
+     height: 100%;
+}
