@@ -22,6 +22,9 @@ $meter-background:  darken($background-color, 7%);
 
   .title {
     color: $title-color;
+    font-size: 100%;
+    top: 15px;
+    text-align: top;
   }
 
   .more-info {

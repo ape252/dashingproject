@@ -14,161 +14,230 @@
               <div class="order-list selected" id="git">
                 <a href="#" class="widget-name selected">GIT
                   <div class="num-widgets number-of-widgets">
-                  <% @count = 0 %>
-                  <% @github_widgets.each do |widget| %>
-                  <% if dashwidgets.include?(widget.id) %>
-                  <% @count += 1 %><% end %><% end %>
-                  <%=  @count %> item(s) selected</div>
-                </a>
-              </div>
-              <div class="order-list" id="jira">
-                <a href="#" class="widget-name">JIRA
-                  <div class="num-widgets number-of-widgets">
-                  <% @count = 0 %>
-                  <% @jira_widgets.each do |widget| %>
-                  <% if dashwidgets.include?(widget.id) %>
-                  <% @count += 1 %><% end %><% end %>
-                  <%=  @count %> item(s) selected</div>
-                </a>
-              </div>
-              <div class="order-list" id="code">
-                <a href="#" class="widget-name">CODE CLIMATE
-                  <div class="num-widgets number-of-widgets">
-                  <% @count = 0 %>
-                  <% @code_widgets.each do |widget| %>
-                  <% if dashwidgets.include?(widget.id) %>
-                  <% @count += 1 %><% end %><% end %>
-                  <%=  @count %> item(s) selected</div>
-                </a>
-              </div>
-              <div class="order-list" id="jenkins">
-                <a href="#" class="widget-name">Jenkins
-                  <div class="num-widgets number-of-widgets">
-                  <% @count = 0 %>
-                  <% @jenkins_widgets.each do |widget| %>
-                  <% if dashwidgets.include?(widget.id) %>
-                  <% @count += 1 %><% end %><% end %>
-                  <%=  @count %> item(s) selected</div>
-                </a>
-              </div>
-              <div class="order-list" id="newrelic">
-                <a href="#" class="widget-name">Newrelic
-                  <div class="num-widgets number-of-widgets">
-                  <% @count = 0 %>
-                  <% @newreli_widgets.each do |widget| %>
-                  <% if dashwidgets.include?(widget.id) %>
-                  <% @count += 1 %><% end %><% end %>
-                  <%=  @count %> item(s) selected</div>
-                </a>
-              </div>
-              <div class="order-list" id="sonar">
-                <a href="#" class="widget-name">Sonar
-                  <div class="num-widgets number-of-widgets">
-                  <% @count = 0 %>
-                  <% @sonar_widgets.each do |widget| %>
-                  <% if dashwidgets.include?(widget.id) %>
-                  <% @count += 1 %><% end %><% end %>
-                  <%=  @count %> item(s) selected</div>
-                </a>
+                    <% @count = 0 %>
+                    <% @github_widgets.each do |widget| %>
+                    <% if dashwidgets.include?(widget.id) %>
+                    <% @count += 1 %><% end %><% end %>
+                    <%=  @count %> item(s) selected</div>
+                  </a>
+                </div>
+                <div class="order-list" id="jira">
+                  <a href="#" class="widget-name">JIRA
+                    <div class="num-widgets number-of-widgets">
+                      <% @count = 0 %>
+                      <% @jira_widgets.each do |widget| %>
+                      <% if dashwidgets.include?(widget.id) %>
+                      <% @count += 1 %><% end %><% end %>
+                      <%=  @count %> item(s) selected</div>
+                    </a>
+                  </div>
+                  <div class="order-list" id="code">
+                    <a href="#" class="widget-name">CODE CLIMATE
+                      <div class="num-widgets number-of-widgets">
+                        <% @count = 0 %>
+                        <% @code_widgets.each do |widget| %>
+                        <% if dashwidgets.include?(widget.id) %>
+                        <% @count += 1 %><% end %><% end %>
+                        <%=  @count %> item(s) selected</div>
+                      </a>
+                    </div>
+                    <div class="order-list" id="jenkins">
+                      <a href="#" class="widget-name">Jenkins
+                        <div class="num-widgets number-of-widgets">
+                          <% @count = 0 %>
+                          <% @jenkins_widgets.each do |widget| %>
+                          <% if dashwidgets.include?(widget.id) %>
+                          <% @count += 1 %><% end %><% end %>
+                          <%=  @count %> item(s) selected</div>
+                        </a>
+                      </div>
+                      <div class="order-list" id="newrelic">
+                        <a href="#" class="widget-name">Newrelic
+                          <div class="num-widgets number-of-widgets">
+                            <% @count = 0 %>
+                            <% @newreli_widgets.each do |widget| %>
+                            <% if dashwidgets.include?(widget.id) %>
+                            <% @count += 1 %><% end %><% end %>
+                            <%=  @count %> item(s) selected</div>
+                          </a>
+                        </div>
+                        <div class="order-list" id="sonar">
+                          <a href="#" class="widget-name">Sonar
+                            <div class="num-widgets number-of-widgets">
+                              <% @count = 0 %>
+                              <% @sonar_widgets.each do |widget| %>
+                              <% if dashwidgets.include?(widget.id) %>
+                              <% @count += 1 %><% end %><% end %>
+                              <%=  @count %> item(s) selected</div>
+                            </a>
+                          </div>
+                          <div class="order-list" id="rally">
+                          <a href="#" class="widget-name">Rally
+                            <div class="num-widgets number-of-widgets">
+                              <% @count = 0 %>
+                              <% @rally_widgets.each do |widget| %>
+                              <% if dashwidgets.include?(widget.id) %>
+                              <% @count += 1 %><% end %><% end %>
+                              <%=  @count %> item(s) selected</div>
+                            </a>
+                          </div>
+                          <div class="order-list" id="rally1">
+                          <a href="#" class="widget-name">Rally1
+                            <div class="num-widgets number-of-widgets">
+                              <% @count = 0 %>
+                              <% @rally1_widgets.each do |widget| %>
+                              <% if dashwidgets.include?(widget.id) %>
+                              <% @count += 1 %><% end %><% end %>
+                              <%=  @count %> item(s) selected</div>
+                            </a>
+                          </div>
+                          <div class="order-list" id="rally2">
+                          <a href="#" class="widget-name">Rally2
+                            <div class="num-widgets number-of-widgets">
+                              <% @count = 0 %>
+                              <% @rally2_widgets.each do |widget| %>
+                              <% if dashwidgets.include?(widget.id) %>
+                              <% @count += 1 %><% end %><% end %>
+                              <%=  @count %> item(s) selected</div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-8">
+                        <div class="add-tiles-content">
+                         <div class="checkbox" id="git-widget">
+                          <div>
+                            <% @github_widgets.each do |widget| %>
+                            <% unless dashwidgets.include?(widget.id) %>
+                            <div><%= check_box_tag "gitwidget[]", widget.id %><%= widget.name %></div>
+                            <% else %>
+                            <div><input type="checkbox" checked="checked" disabled="true"></div><%= widget.name %>
+                            <% end %>
+                            <% end %>
+                          </div>
+                        </div>
+                        <div class="checkbox" id="jira-widget">
+                          <div>
+                            <% @jira_widgets.each do |widget| %>
+                            <% unless dashwidgets.include?(widget.id) %>
+                            <div><%= check_box_tag "jirawidget[]", widget.id %><%= widget.name %></div>
+                            <% else %>
+                            <div><input type="checkbox" checked="checked" disabled="true"></div><%= widget.name %>
+                            <% end %>
+                            <% end %>
+                          </div>
+                        </div>
+                        <div class="checkbox" id="code-widget">
+                          <div>
+                            <% @code_widgets.each do |widget| %>
+                            <% unless dashwidgets.include?(widget.id) %>
+                            <div><%= check_box_tag "codewidget[]", widget.id %><%= widget.name %></div>
+                            <% else %>
+                            <div><input type="checkbox" checked="checked" disabled="true"></div><%= widget.name %>
+                            <% end %>
+                            <% end %>
+                          </div>
+                        </div>
+                        <div class="checkbox" id="jenkins-widget">
+                          <div>
+                            <% @jenkins_widgets.each do |widget| %>
+                            <% unless dashwidgets.include?(widget.id) %>
+                            <div><%= check_box_tag "jirawidget[]", widget.id %><%= widget.name %></div>
+                            <% else %>
+                            <div><input type="checkbox" checked="checked" disabled="true"></div><%= widget.name %>
+                            <% end %>
+                            <% end %>
+                          </div>
+                        </div>
+                        <div class="checkbox" id="newrelic-widget">
+                          <div>
+                            <% @newreli_widgets.each do |widget| %>
+                            <% unless dashwidgets.include?(widget.id) %>
+                            <div><%= check_box_tag "jirawidget[]", widget.id %><%= widget.name %></div>
+                            <% else %>
+                            <div><input type="checkbox" checked="checked" disabled="true"></div><%= widget.name %>
+                            <% end %>
+                            <% end %>
+                          </div>
+                        </div>
+                        <div class="checkbox" id="sonar-widget">
+                          <div>
+                            <% @sonar_widgets.each do |widget| %>
+                            <% unless dashwidgets.include?(widget.id) %>
+                            <div><%= check_box_tag "sonarwidget[]", widget.id %><%= widget.name %></div>
+                            <% else %>
+                            <div><input type="checkbox" checked="checked" disabled="true"></div><%= widget.name %>
+                            <% end %>
+                            <% end %>
+                          </div>
+                        </div>
+
+
+
+                        <div class="checkbox" id="rally-widget">
+                          <div>
+                            <% @rally_widgets.each do |widget| %>
+                            <% unless dashwidgets.include?(widget.id) %>
+                            <div><%= check_box_tag "rallywidget[]", widget.id %><%= widget.name %></div>
+                            <% else %>
+                            <div><input type="checkbox" checked="checked" disabled="true"></div><%= widget.name %>
+                            <% end %>
+                            <% end %>
+                          </div>
+                        </div>
+                       <div class="checkbox" id="rally1-widget">
+                          <div>
+                            <% @rally1_widgets.each do |widget| %>
+                            <% unless dashwidgets.include?(widget.id) %>
+                            <div><%= check_box_tag "rallywidget[]", widget.id %><%= widget.name %></div>
+                            <% else %>
+                            <div><input type="checkbox" checked="checked" disabled="true"></div><%= widget.name %>
+                            <% end %>
+                            <% end %>
+                          </div>
+                        </div>
+                        <div class="checkbox" id="rally2-widget">
+                          <div>
+                            <% @rally2_widgets.each do |widget| %>
+                            <% unless dashwidgets.include?(widget.id) %>
+                            <div><%= check_box_tag "rallywidget[]", widget.id %><%= widget.name %></div>
+                            <% else %>
+                            <div><input type="checkbox" checked="checked" disabled="true"></div><%= widget.name %>
+                            <% end %>
+                            <% end %>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <%= f.submit "Save changes", :class=>"btn btn-primary", :id => "click_disable1" %>
+                </div>
+                <%end%>
               </div>
             </div>
           </div>
-          <div class="col-sm-8">
-            <div class="add-tiles-content">
-             <div class="checkbox" id="git-widget">
-              <div>
-                <% @github_widgets.each do |widget| %>
-                <% unless dashwidgets.include?(widget.id) %>
-                <div><%= check_box_tag "gitwidget[]", widget.id %><%= widget.name %></div>
-                <% else %>
-                <div><input type="checkbox" checked="checked" disabled="true"></div><%= widget.name %>
-                <% end %>
-                <% end %>
-              </div>
-            </div>
-            <div class="checkbox" id="jira-widget">
-              <div>
-                <% @jira_widgets.each do |widget| %>
-                <% unless dashwidgets.include?(widget.id) %>
-                <div><%= check_box_tag "jirawidget[]", widget.id %><%= widget.name %></div>
-                <% else %>
-                <div><input type="checkbox" checked="checked" disabled="true"></div><%= widget.name %>
-                <% end %>
-                <% end %>
-              </div>
-            </div>
-            <div class="checkbox" id="code-widget">
-              <div>
-                <% @code_widgets.each do |widget| %>
-                <% unless dashwidgets.include?(widget.id) %>
-                <div><%= check_box_tag "codewidget[]", widget.id %><%= widget.name %></div>
-                <% else %>
-                <div><input type="checkbox" checked="checked" disabled="true"></div><%= widget.name %>
-                <% end %>
-                <% end %>
-              </div>
-            </div>
-            <div class="checkbox" id="jenkins-widget">
-              <div>
-                <% @jenkins_widgets.each do |widget| %>
-                <% unless dashwidgets.include?(widget.id) %>
-                <div><%= check_box_tag "jirawidget[]", widget.id %><%= widget.name %></div>
-                <% else %>
-                <div><input type="checkbox" checked="checked" disabled="true"></div><%= widget.name %>
-                <% end %>
-                <% end %>
-              </div>
-            </div>
-            <div class="checkbox" id="newrelic-widget">
-              <div>
-                <% @newreli_widgets.each do |widget| %>
-                <% unless dashwidgets.include?(widget.id) %>
-                <div><%= check_box_tag "jirawidget[]", widget.id %><%= widget.name %></div>
-                <% else %>
-                <div><input type="checkbox" checked="checked" disabled="true"></div><%= widget.name %>
-                <% end %>
-                <% end %>
-              </div>
-            </div>
-            <div class="checkbox" id="sonar-widget">
-              <div>
-                <% @sonar_widgets.each do |widget| %>
-                <% unless dashwidgets.include?(widget.id) %>
-                <div><%= check_box_tag "sonarwidget[]", widget.id %><%= widget.name %></div>
-                <% else %>
-                <div><input type="checkbox" checked="checked" disabled="true"></div><%= widget.name %>
-                <% end %>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      <%= f.submit "Save changes", :class=>"btn btn-primary", :id => "click_disable1" %>
-    </div>
-    <%end%>
-  </div>
-</div>
-</div>
-<script type="text/javascript">
-  $("#style1").addClass('ss');
-  $('#jira-widget').hide();
-  $('#code-widget').hide();
-  $('#jenkins-widget').hide();
-  $('#newrelic-widget').hide();
-  $('#sonar-widget').hide();
-  $(document).ready(function() {
-    $('.widget-name').on('click', function(){
-      $('.widget-name').removeClass('selected');
-      $(this).addClass('selected');
-    });
-  });
-  $(document).ready(function(){
-    $("#click_disable1").click(function(){
-        $("#click_disable1").addClass('disabled');
-    });
-  });
-</script>
+          <script type="text/javascript">
+            $("#style1").addClass('ss');
+            $('#jira-widget').hide();
+            $('#code-widget').hide();
+            $('#jenkins-widget').hide();
+            $('#newrelic-widget').hide();
+            $('#sonar-widget').hide();
+            $('#rally-widget').hide();
+            $('#rally1-widget').hide();
+            $('#rally2-widget').hide();
+            $(document).ready(function() {
+              $('.widget-name').on('click', function(){
+                $('.widget-name').removeClass('selected');
+                $(this).addClass('selected');
+              });
+            });
+            $(document).ready(function(){
+              $("#click_disable1").click(function(){
+                $("#click_disable1").addClass('disabled');
+              });
+            });
+          </script>

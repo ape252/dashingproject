@@ -17,8 +17,11 @@ class Admin::DashboardWidgetsController < ApplicationController
     @newreli_widgets = @widgets.all.select{|w|w.name if w.widget_type=='Newrelic'&& w.name != 'Response-Time'}
     @sonar_widgets = @widgets.all.select{|w|w.name if w.widget_type=='sonar'}
     @rally_widgets = @widgets.all.select{|w|w.name if w.widget_type=='rally'}
+    @rally1_widgets = @widgets.all.select{|w|w.name if w.widget_type=='rally1'}
 
+    @rally2_widgets = @widgets.all.select{|w|w.name if w.widget_type=='rally2'}
 
+    
   end
 
   def create

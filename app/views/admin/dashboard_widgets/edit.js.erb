@@ -51,11 +51,26 @@ $('#myModal').modal('show');
 jira_no_of_issues_validator()
 <% end %>
 
+
+
+
 <% if @widget.widget_type == "rally" && @widget.name == "rally" %>
-$('#myModal').html("<%= escape_javascript(render(:partial=>'/admin/dashboard_widgets/jenkins/rally'))  %>");
+$('#myModal').html("<%= escape_javascript(render(:partial=>'/admin/dashboard_widgets/rally/rally'))  %>");
+$('#myModal').modal('show');
+jira_validator()
+<% elsif @widget.widget_type == "rally1" && @widget.name == "rally1" %>
+$('#myModal').html("<%= escape_javascript(render(:partial=>'/admin/dashboard_widgets/rally/rally1'))  %>");
 $('#myModal').modal('show');
 
+<% elsif @widget.widget_type == "rally2" && @widget.name == "rally2" %>
+$('#myModal').html("<%= escape_javascript(render(:partial=>'/admin/dashboard_widgets/rally/rally2'))  %>");
+$('#myModal').modal('show');
+
+
 <% end %>
+
+
+
 
 
 

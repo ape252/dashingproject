@@ -1,0 +1,39 @@
+<div id="popup_modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Configure Widget</h4>
+			</div>
+			<%= form_for([:admin, @dashboard_widget], url: admin_dashboard_dashboard_widget_path(@dashboard, @dashboard_widget), :html => {:id=>"form_github_widget", :method =>  :patch, :remote=>true}) do |f| %>
+      <div class="modal-body">
+        <div class="panel-body" style="height:auto;">
+          <div class="form-group">
+            <label for="inputName" class="col-sm-4 control-label">Access Token *</label>
+            <div class="col-sm-8">
+              <%= f.text_field :access_token, :class=>"form-control" %>
+            </div>
+          </div><br><br>
+          <div class="form-group">
+            <label for="inputName" class="col-sm-4 control-label">Organization Name *</label>
+            <div class="col-sm-8">
+              <%= f.text_field :organization_name, :class=>"form-control" %>
+            </div>
+          </div><br><br>
+          <div class="form-group">
+            <label for="inputName" class="col-sm-4 control-label">Repository Name *</label>
+            <div class="col-sm-8">
+              <%= f.text_field :repo_name, :class=>"form-control" %>
+            </div>
+          </div><br><br>
+        </div>
+      </div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<%= f.submit "Submit", :class=>"btn btn-primary" %>
+			</div>
+			<% end %>
+		</div>
+	</div>
+</div>
+

@@ -26,6 +26,9 @@ Widget.create(name:'Response-Time', widget_type: 'Newrelic')
 Widget.create(name:'sonar', widget_type: 'sonar')
 
 Widget.create(name:'rally', widget_type: 'rally')
+Widget.create(name:'rally1', widget_type: 'rally1')
+Widget.create(name:'rally2', widget_type: 'rally2')
+
 
 
 Widget.all.each do |u|

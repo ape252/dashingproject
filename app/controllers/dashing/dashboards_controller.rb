@@ -17,6 +17,7 @@ module Dashing
     include Newrelic
     include BurnDownChart
     include Sonar
+    include Rally
 
     before_filter :check_dashboard_name, only: :show
 

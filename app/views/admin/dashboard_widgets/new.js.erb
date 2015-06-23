@@ -13,6 +13,9 @@ $("#git").click(function(){
   $("#jenkins").removeClass("selected");
   $("#newrelic").removeClass("selected");
     $("#sonar").removeClass("selected");
+    $("#rally").removeClass("selected");
+    $("#rally1").removeClass("selected");
+    $("#rally2").removeClass("selected");
 
 
 
@@ -22,6 +25,9 @@ $("#git").click(function(){
   $('#jenkins-widget').hide();
   $('#newrelic-widget').hide();
   $('#sonar-widget').hide();
+$('#rally-widget').hide();
+$('#rally1-widget').hide();
+$('#rally2-widget').hide();
 
 
 });
@@ -33,6 +39,9 @@ $("#jira").click(function(){
   $("#jenkins").removeClass("selected");
   $("#newrelic").removeClass("selected");
   $("#sonar").removeClass("selected");
+  $("#rally").removeClass("selected");
+    $("#rally1").removeClass("selected");
+    $("#rally2").removeClass("selected");
 
 
 
@@ -43,6 +52,9 @@ $("#jira").click(function(){
   $('#jenkins-widget').hide();
   $('#newrelic-widget').hide();
   $('#sonar-widget').hide();
+$('#rally-widget').hide();
+$('#rally1-widget').hide();
+$('#rally2-widget').hide();
 
 
 });
@@ -54,6 +66,9 @@ $("#code").click(function(){
   $("#jenkins").removeClass("selected");
   $("#newrelic").removeClass("selected");
   $("#sonar").removeClass("selected");
+  $("#rally").removeClass("selected");
+    $("#rally1").removeClass("selected");
+    $("#rally2").removeClass("selected");
 
 
 
@@ -66,6 +81,9 @@ $("#code").click(function(){
 
   $('#sonar-widget').hide();
 
+$('#rally-widget').hide();
+$('#rally1-widget').hide();
+$('#rally2-widget').hide();
 
 });
 $("#jenkins").click(function(){
@@ -76,6 +94,10 @@ $("#jenkins").click(function(){
   $("#code").removeClass("selected");
   $("#newrelic").removeClass("selected");
   $("#sonar").removeClass("selected");
+  $("#rally").removeClass("selected");
+    $("#rally1").removeClass("selected");
+    $("#rally2").removeClass("selected");
+
 
 
 
@@ -88,6 +110,9 @@ $("#jenkins").click(function(){
 
   $('#sonar-widget').hide();
 
+$('#rally-widget').hide();
+$('#rally1-widget').hide();
+$('#rally2-widget').hide();
 
 });
 $("#newrelic").click(function(){
@@ -98,7 +123,9 @@ $("#newrelic").click(function(){
   $("#code").removeClass("selected");
   $("#newrelic").addClass("selected");
   $("#sonar").removeClass("selected");
-
+  $("#rally").removeClass("selected");
+    $("#rally1").removeClass("selected");
+    $("#rally2").removeClass("selected");
 
 
 
@@ -109,6 +136,9 @@ $("#newrelic").click(function(){
   $('#newrelic-widget').show();
   $('#sonar-widget').hide();
 
+$('#rally-widget').hide();
+$('#rally1-widget').hide();
+$('#rally2-widget').hide();
 
 
 });
@@ -124,6 +154,11 @@ $("#sonar").click(function(){
   $("#code").removeClass("selected");
   $("#newrelic").removeClass("selected");
   $("#sonar").addClass("selected");
+ $("#rally").removeClass("selected");
+    $("#rally1").removeClass("selected");
+    $("#rally2").removeClass("selected");
+
+
 
   $('#git-widget').hide();
   $('#jira-widget').hide();
@@ -131,6 +166,86 @@ $("#sonar").click(function(){
   $('#jenkins-widget').hide();
   $('#newrelic-widget').hide();
   $('#sonar-widget').show();
+$('#rally-widget').hide();
+$('#rally1-widget').hide();
+$('#rally2-widget').hide();
+
+
+});
+$("#rally").click(function(){
+
+  $("#jenkins").removeClass("selected");
+  $("#jira").removeClass("selected");
+  $("#git").removeClass("selected");
+  $("#code").removeClass("selected");
+  $("#newrelic").removeClass("selected");
+  $("#sonar").removeClass("selected");
+  $("#rally").addClass("selected");
+    $("#rally1").removeClass("selected");
+    $("#rally2").removeClass("selected");
+
+
+  $('#git-widget').hide();
+  $('#jira-widget').hide();
+  $('#code-widget').hide();
+  $('#jenkins-widget').hide();
+  $('#newrelic-widget').hide();
+  $('#sonar-widget').hide();
+$('#rally-widget').show();
+$('#rally1-widget').hide();
+$('#rally2-widget').hide();
+
+
+});
+$("#rally1").click(function(){
+
+  $("#jenkins").removeClass("selected");
+  $("#jira").removeClass("selected");
+  $("#git").removeClass("selected");
+  $("#code").removeClass("selected");
+  $("#newrelic").removeClass("selected");
+  $("#sonar").removeClass("selected");
+  $("#rally").removeClass("selected");
+    $("#rally1").addClass("selected");
+    $("#rally2").removeClass("selected");
+
+
+
+  $('#git-widget').hide();
+  $('#jira-widget').hide();
+  $('#code-widget').hide();
+  $('#jenkins-widget').hide();
+  $('#newrelic-widget').hide();
+  $('#sonar-widget').hide();
+$('#rally-widget').hide();
+$('#rally1-widget').show();
+$('#rally2-widget').hide();
+
+
+});
+$("#rally2").click(function(){
+
+  $("#jenkins").removeClass("selected");
+  $("#jira").removeClass("selected");
+  $("#git").removeClass("selected");
+  $("#code").removeClass("selected");
+  $("#newrelic").removeClass("selected");
+  $("#sonar").removeClass("selected");
+  $("#rally").removeClass("selected");
+    $("#rally1").removeClass("selected");
+    $("#rally2").addClass("selected");
+
+
+  $('#git-widget').hide();
+  $('#jira-widget').hide();
+  $('#code-widget').hide();
+  $('#jenkins-widget').hide();
+  $('#newrelic-widget').hide();
+  $('#sonar-widget').hide();
+
+$('#rally-widget').hide();
+$('#rally1-widget').hide();
+$('#rally2-widget').show();
 
 
 });
