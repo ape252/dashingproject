@@ -22,7 +22,6 @@ module Jira
     Dashing.scheduler.every '5m', :first_in => 0 do |job|
 
       client = JIRA::Client.new(options)
-      binding.pry
       total_points = 0;
       client.Issue.jql("PROJECT = \"#{project}\" AND SPRINT = \"#{sprint_name}\"").each do |issue|
         total_points+=1
@@ -160,7 +159,7 @@ module Jira
       :auth_type => :basic
     }
 
-    Dashing.scheduler.every '30s', :first_in => 0 do |job|
+    Dashing.scheduler.every '2m', :first_in => 0 do |job|
 
       client = JIRA::Client.new(options)
       todo_count = 0;
