@@ -19,5 +19,6 @@
 //= require codeclimate/code_gpa_validations
 //= require jira/jira_validations
 //= require jira/jira_no_of_issues_validations
+//= require jenkins/jenkins_validation
 //= require background
 //= require create_user
