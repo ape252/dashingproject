@@ -17,8 +17,6 @@ class Admin::DashboardWidgetsController < ApplicationController
     @newreli_widgets = @widgets.all.select{|w|w.name if w.widget_type=='Newrelic'&& w.name != 'Response-Time'}
     @sonar_widgets = @widgets.all.select{|w|w.name if w.widget_type=='sonar'}
     @rally_widgets = @widgets.all.select{|w|w.name if w.widget_type=='rally'}
-
-
   end
 
   def create
@@ -57,6 +55,7 @@ class Admin::DashboardWidgetsController < ApplicationController
     @dashboard_widget.jira_project_key = params[:dashboard_widget][:jira_project_key]
     @dashboard_widget.github_status_prs = params[:dashboard_widget][:github_status_prs]
     @dashboard_widget.jenkins_name = params[:dashboard_widget][:jenkins_name]
+    @dashboard_widget.jenkins_url = params[:dashboard_widget][:jenkins_url ]
     @dashboard_widget.jenkins_password = params[:dashboard_widget][:jenkins_password]
     @dashboard_widget.key = params[:dashboard_widget][:key]
     @dashboard_widget.sonar_server = params[:dashboard_widget][:sonar_server]
