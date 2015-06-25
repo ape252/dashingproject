@@ -34,7 +34,7 @@ jira_validator()
 <% elsif @widget.widget_type == "Jira" && @widget.name == "Sprint-progress" %>
 $('#myModal').html("<%= escape_javascript(render(:partial=>'/admin/dashboard_widgets/jira/jira_noofissues'))  %>");
 $('#myModal').modal('show');
-jira_validator()
+jira_no_of_issues_validator()
 <% elsif @widget.widget_type == "Jira" && @widget.name == "Jira Stories Details" %>
 $('#myModal').html("<%= escape_javascript(render(:partial=>'/admin/dashboard_widgets/jira/jira_noofissues'))  %>");
 $('#myModal').modal('show');
@@ -48,7 +48,7 @@ jira_validator()
 <% if @widget.widget_type == "Jenkins" && @widget.name == "Build-test" %>
 $('#myModal').html("<%= escape_javascript(render(:partial=>'/admin/dashboard_widgets/jenkins/jenkins_build_status'))  %>");
 $('#myModal').modal('show');
-jira_no_of_issues_validator()
+jenkins_validator()
 <% end %>
 
 <% if @widget.widget_type == "rally" && @widget.name == "rally" %>
