@@ -44,3 +44,14 @@ uat:
   password: password
   host: localhost
   port: 5432
+
+it:
+  adapter: postgresql
+  encoding: unicode
+  reconnect: false
+  database: d_dash_it
+  pool: 30
+  username: postgres
+  password: password
+  host: localhost
+  port: 5432
