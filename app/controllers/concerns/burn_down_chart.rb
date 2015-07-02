@@ -26,7 +26,7 @@ module BurnDownChart
 			end
 
 			@jira_config[:sprint_mapping].each do |mappingName, rapidViewId|
-				Dashing.scheduler.every '5m', :first_in => 0 do
+				Dashing.scheduler.every '2m', :first_in => 0 do
 					endNbr = @jira_config[:numberOfSprintsToShow].to_i - 1
 					burndowns = [*0..endNbr].map do |sprintIndex|
 						downloader = SprintJsonDownloader.new(@jira_config[:jira_url], @jira_config[:username], @jira_config[:password])

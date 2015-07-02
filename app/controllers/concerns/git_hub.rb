@@ -3,7 +3,7 @@ module GitHub
   extend ActiveSupport::Concern
 
   def github_commits(obj)
-    Dashing.scheduler.every '1m', :first_in => 0 do |job|
+    Dashing.scheduler.every '2m', :first_in => 0 do |job|
       client = Octokit::Client.new(:access_token => obj["access_token"])
       githubcommits = client.list_commits("#{obj["organization_name"]}/#{obj["repo_name"]}").map do |commit_obj|
        { 
@@ -24,7 +24,7 @@ def github_status(obj)
     'major' => 'red'
   }
     # GITHUB_STATUS_URI = obj["github_url"].to_str
-    Dashing.scheduler.every '10s', :first_in => 0 do
+    Dashing.scheduler.every '2m', :first_in => 0 do
       response = HTTParty.get("https://status.github.com/api/last-message.json")
       data = {
         status: @traffic_lights[response["status"]],
@@ -35,7 +35,7 @@ def github_status(obj)
   end
 
   def github_open_pr_job(obj)
-    Dashing.scheduler.every '5m', :first_in => 0 do |job|
+    Dashing.scheduler.every '2m', :first_in => 0 do |job|
       client = Octokit::Client.new(:access_token => obj["access_token"])
       my_organization = obj["organization_name"]
 
@@ -59,7 +59,7 @@ def github_status(obj)
   end
 
   def github_closed_pr_job(obj)
-    Dashing.scheduler.every '5m', :first_in => 0 do |job|
+    Dashing.scheduler.every '2m', :first_in => 0 do |job|
       client = Octokit::Client.new(:access_token => obj["access_token"])
       my_organization = obj["organization_name"]
       repos = client.organization_repositories(my_organization).map { |repo| repo.name }
