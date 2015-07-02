@@ -15,7 +15,7 @@ module BurnDownChart
 
 			@jira_config[:sprint_mapping].each do |mappingName, rapidViewId|
 				sprintIndex = 0
-				Dashing.scheduler.every '10s', :first_in => 0 do
+				Dashing.scheduler.every '5m', :first_in => 0 do
 					burndowns = @jira_burndowns[mappingName]
 					if !burndowns.nil? && !burndowns.empty?
 						tempSprintIndex = sprintIndex
