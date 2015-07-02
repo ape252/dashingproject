@@ -117,7 +117,7 @@ module Jira
         view_json = get_view_for_viewid(view_id[:view_id])
         if (view_json)
           view_name = view_json['name']
-          sprint_json = get_active_sprint_for_view(view_json['id'])
+          sprint_json = get_active_sprint_for_view(view_json['id']).last
           if (sprint_json)
             sprint_name = sprint_json['name']
             days_json = get_remaining_days(view_json['id'], sprint_json['id'])
