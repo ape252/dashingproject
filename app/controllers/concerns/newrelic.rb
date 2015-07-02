@@ -20,7 +20,7 @@ module Newrelic
 
 		NewRelicApi.api_key = key
 
-		Dashing.scheduler.every '2m', :first_in => 0 do |job|
+		Dashing.scheduler.every '5m', :first_in => 0 do |job|
 			app = NewRelicApi::Account.first.applications.select { |el|
 				el.name == app_name
 				}.first
