@@ -7,7 +7,7 @@ module Sonar
 		# binding.pry
 		metrics = "#{obj["matric"]}"
 		id = "idsonar#{obj['dashboard_id']}"
-		Dashing.scheduler.every  '10s', :first_in => 0 do |job|
+		Dashing.scheduler.every  '5m', :first_in => 0 do |job|
 			uri = URI("#{server}/api/resources?resource=#{key}&metrics=#{metrics}&format=json")
 			res = Net::HTTP.get(uri)
 			j = JSON[res][0]['msr']
