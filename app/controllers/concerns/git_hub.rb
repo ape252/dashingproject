@@ -35,7 +35,7 @@ def github_status(obj)
   end
 
   def github_open_pr_job(obj)
-    Dashing.scheduler.every '5m', :first_in => 0 do |job|
+    Dashing.scheduler.every '1m', :first_in => 0 do |job|
       client = Octokit::Client.new(:access_token => obj["access_token"])
       my_organization = obj["organization_name"]
 
