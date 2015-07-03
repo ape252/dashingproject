@@ -24,7 +24,7 @@ def github_status(obj)
     'major' => 'red'
   }
     # GITHUB_STATUS_URI = obj["github_url"].to_str
-    Dashing.scheduler.every '5m', :first_in => 0 do
+    Dashing.scheduler.every '1m', :first_in => 0 do
       response = HTTParty.get("https://status.github.com/api/last-message.json")
       data = {
         status: @traffic_lights[response["status"]],
