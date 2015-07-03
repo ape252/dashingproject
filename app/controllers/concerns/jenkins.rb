@@ -8,7 +8,7 @@ module Jenkins
 			'password' => obj["jenkins_password"]
 		}
 
-		Dashing.scheduler.every '5m' do
+		Dashing.scheduler.every '1m' do
 
 			json = getFromJenkins(@jenkins_rui + 'api/json?pretty=true')
 

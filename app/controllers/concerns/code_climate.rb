@@ -2,7 +2,7 @@ module CodeClimate
   extend ActiveSupport::Concern
 
   def gpa(obj)
-    Dashing.scheduler.every '5m', :first_in => 0 do |job|
+    Dashing.scheduler.every '1m', :first_in => 0 do |job|
       uri = URI.parse("https://codeclimate.com/api/repos/#{obj['code_repo_id']}")
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
