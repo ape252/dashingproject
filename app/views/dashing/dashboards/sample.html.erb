@@ -32,11 +32,52 @@ var gridster = $('.gridster ul').gridster().data('gridster');
 
   </li>
 
+  <% when "Sprint-progress" %>
+  <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
+    <div data-id="sprint_progress_<%= params[:dashboard_id].to_i %>" data-view="SprintProgress" data-title="Sprint Progress" style=" width: 100%; height: 100%;"></div>
+  </li>
   
+
+  <% when "Sprint-remaning-days" %>
+  <li data-row="2" data-col="2" data-sizex="1" data-sizey="1">
+    <div data-id="view<%= params[:dashboard_id].to_i %>" data-view="JiraSprintRemainingDays" style=" width: 100%; height: 100%;"></div>
+  </li>
   
-   
+  <% when "Build-test" %>
+  <li data-row="2" data-col="3" data-sizex="1" data-sizey="1">
+    <div data-id="jenkinsBuildStatus" data-view="JenkinsBuildStatus" data-title="Jenkins" style=" width: 100%; height: 100%;"></div>
+  </li>
+  
+    <% when "Error-Rate" %>
+    <li data-row="2" data-col="4" data-sizex="1" data-sizey="1">
+      <div data-id="rpm<%= params[:dashboard_id].to_i %>_error_rate" data-view="Number" data-title="New Relic Error Rate" data-min="0" data-max="100" style=" width: 100%; height: 100%;"></div>
+    </li>
+    <% when "sonar"%> 
+    <li data-row="1", data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="sonar<%= params[:dashboard_id].to_i %>" data-view="List" data-title="Sonar" data-unordered="true" data-moreinfo="Sonar"  style=" width: 100%; height: 100%;"></div>
+    </li>
+
+    <% when "rally"%> 
+    <li data-row="1", data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="sonar<%= params[:dashboard_id].to_i %>" data-view="List" data-title="Rally" data-unordered="true"  style=" width: 100%; height: 100%;"></div>
+    </li>
 
 
+    <% when "rally1"%> 
+    <li data-row="1", data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="sonar<%= params[:dashboard_id].to_i %>" data-view="List" data-title="Rally1" data-unordered="true" style=" width: 100%; height: 100%;"></div>
+    </li>
+
+
+    <% when "rally2"%> 
+    <li data-row="1", data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="sonar<%= params[:dashboard_id].to_i %>" data-view="List" data-title="Rally2" data-unordered="true" style=" width: 100%; height: 100%;"> </div>
+    </li>
+    
+    <% when "Burn Down Chart" %>
+    <li data-row="1" data-col="2" data-sizex="2" data-sizey="1" style="background-color: white">
+      <div data-id="myBurndown<%= params[:dashboard_id].to_i %>" data-view="JiraBurndown"  style=" width: 100%; height: 100%;"></div>
+    </li>
     <% end %>
     <% end %>
   </ul>
