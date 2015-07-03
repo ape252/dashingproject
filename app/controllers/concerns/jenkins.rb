@@ -43,6 +43,7 @@ module Jenkins
 			}
 
 			failed = failedJobs.size > 0
+			binding.pry
 
 			Dashing.send_event("jenkinsBuildStatus#{obj['dashboard_id']}", { failedJobs: failedJobs, succeededJobs: succeededJobs, failed: failed })
 		end
