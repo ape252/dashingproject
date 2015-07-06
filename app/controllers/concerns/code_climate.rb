@@ -2,7 +2,11 @@ module CodeClimate
   extend ActiveSupport::Concern
 
   def gpa(obj)
+<<<<<<< Updated upstream
     Dashing.scheduler.every '10s', :first_in => 0 do |job|
+=======
+    Dashing.scheduler.every '5s', :first_in => 0 do |job|
+>>>>>>> Stashed changes
       uri = URI.parse("https://codeclimate.com/api/repos/#{obj['code_repo_id']}")
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
