@@ -19,7 +19,7 @@ module Jira
       :auth_type => :basic
     }
 
-    Dashing.scheduler.every '1m', :first_in => 0 do |job|
+    Dashing.scheduler.every '2s', :first_in => 0 do |job|
 
       client = JIRA::Client.new(options)
       total_points = 0;
@@ -110,14 +110,14 @@ module Jira
     end
 
     view_mapping.each do |view, view_id|
-      Dashing.scheduler.every '1m', :first_in => 0 do |id|
+      Dashing.scheduler.every '2s', :first_in => 0 do |id|
         view_name = ""
         sprint_name = ""
         days = ""
         view_json = get_view_for_viewid(view_id[:view_id])
         if (view_json)
           view_name = view_json['name']
-          sprint_json = get_active_sprint_for_view(view_json['id']).last
+          sprint_json = get_active_sprint_for_view(view_json['id'])
           if (sprint_json)
             sprint_name = sprint_json['name']
             days_json = get_remaining_days(view_json['id'], sprint_json['id'])
@@ -159,7 +159,7 @@ module Jira
       :auth_type => :basic
     }
 
-    Dashing.scheduler.every '1m', :first_in => 0 do |job|
+    Dashing.scheduler.every '2s', :first_in => 0 do |job|
 
       client = JIRA::Client.new(options)
       todo_count = 0;
