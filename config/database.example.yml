@@ -52,6 +52,7 @@ it:
   database: d_dash_it
   pool: 30
   username: postgres
-  password: 
+  password: password
+  template: template0
   host: localhost
   port: 5432
