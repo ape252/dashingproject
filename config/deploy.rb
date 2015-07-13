@@ -1,6 +1,7 @@
 set :application, 'Dashingproject'
 set :repo_url, 'https://github.com/Qwinix/dashingproject.git'
 set :scm, :git
+set :shared_path, '/u01/apps/qwinix/it_dashboard/shared/'
 set :puma_threads,    [0, 6]
 set :puma_workers,    1
 set :puma_bind,       "unix://#{shared_path}/tmp/sockets/#{fetch(:application)}-puma.sock"
