@@ -1,27 +1,13 @@
 set :application, 'Dashingproject'
 set :repo_url, 'https://github.com/Qwinix/dashingproject.git'
 set :scm, :git
-set :puma_threads,    [0, 6]
-set :puma_workers,    1
-set :puma_bind,       "unix://#{shared_path}/tmp/sockets/#{fetch(:application)}-puma.sock"
-set :puma_state,      "#{shared_path}/tmp/pids/puma.state"
-set :puma_pid,        "#{shared_path}/tmp/pids/puma.pid"
-set :puma_access_log, "#{release_path}/log/puma.error.log"
-set :puma_error_log,  "#{release_path}/log/puma.access.log"
-set :puma_preload_app, true
-set :puma_worker_timeout, nil
-set :puma_init_active_record, false  # Change to true if using ActiveRecord
-# ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 set :format, :pretty
 
 set :default_env, { :path => "~/.rbenv/shims:~/.rbenv/bin:$PATH" }
 set :rbenv_type, :user # or :system, depends on your rbenv setup
 set :rbenv_ruby, '2.2.2-p95'
-#set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
 #set :rbenv_map_bins, %w{rake gem bundle ruby rails}
-
-set :bundle_gemfile, proc { release_path.join('Gemfile') }
 set :bundle_dir, proc  { shared_path.join('bundle') }
 set :bundle_flags, '--deployment --quiet'
 set :bundle_without, %w{development test}.join(' ')
@@ -97,17 +83,6 @@ namespace :assets do
       end
     end
   end
-namespace :puma do
-  desc 'Create Directories for Puma Pids and Socket'
-  task :make_dirs do
-    on roles(:app) do
-      execute "mkdir #{shared_path}/tmp/sockets -p"
-      execute "mkdir #{shared_path}/tmp/pids -p"
-    end
-  end
-
-  before :start, :make_dirs
-end
 
 desc 'Initial Deploy'
   task :initial do
