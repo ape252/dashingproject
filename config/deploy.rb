@@ -17,7 +17,7 @@ set :format, :pretty
 
 set :default_env, { :path => "~/.rbenv/shims:~/.rbenv/bin:$PATH" }
 set :rbenv_type, :user # or :system, depends on your rbenv setup
-set :rbenv_ruby, '2.0.0-p247'
+set :rbenv_ruby, '2.2.2-p95'
 #set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
 #set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 
